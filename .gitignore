@@ -1,0 +1,25 @@
+# SketchUp files
+*.skp
+*.skb
+
+# AutoCAD files
+*.dwg
+*.bak
+
+# PowerPoint presentations
+*.pptx
+
+# Old render folders
+Render_20_outubro_2025/
+RENDER_23_OUTUBRO_2025/
+
+# Keep only the organized renders in public/
+DECK_REVISADOScene*.png
+RENDER_FINAL_28_NOVEMBRO/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

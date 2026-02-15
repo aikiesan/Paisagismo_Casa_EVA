@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa EVA - Paisagismo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .gallery h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .species {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+        }
+
+        .species h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .species-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .species-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .species-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .species-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .species-info {
+            padding: 20px;
+        }
+
+        .species-name {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .species-scientific {
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #333333;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive breakpoints */
+        @media (min-width: 768px) {
+            .species-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .species-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CASA EVA</h1>
+        <p>Projeto de Paisagismo - Praia do Estaleiro</p>
+    </header>
+
+    <section class="gallery">
+        <h2>Visualizações 3D</h2>
+        <img src="public/images/renders/deck-01.png" alt="Vista Deck 01" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/deck-02.png" alt="Vista Deck 02" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/deck-03.png" alt="Vista Deck 03" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/deck-04.png" alt="Vista Deck 04" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/deck-05.png" alt="Vista Deck 05" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/final-01.png" alt="Vista Final 01" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/final-02.png" alt="Vista Final 02" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/final-03.png" alt="Vista Final 03" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/final-04.png" alt="Vista Final 04" class="gallery-image" loading="lazy">
+        <img src="public/images/renders/final-05.png" alt="Vista Final 05" class="gallery-image" loading="lazy">
+    </section>
+
+    <section class="species">
+        <h2>Espécies Brasileiras Nativas</h2>
+        <div class="species-grid">
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Chloroleucon_tortum_-_flower.jpg/1280px-Chloroleucon_tortum_-_flower.jpg" alt="Tataré" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Tataré</div>
+                    <div class="species-scientific">Chloroleucon tortum</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Plinia_cauliflora.jpg/1280px-Plinia_cauliflora.jpg" alt="Jabuticabeira" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Jabuticabeira</div>
+                    <div class="species-scientific">Plinia cauliflora</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Plumeria_rubra_%28Frangipani%29_flowers.jpg/1280px-Plumeria_rubra_%28Frangipani%29_flowers.jpg" alt="Jasmim Manga" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Jasmim Manga</div>
+                    <div class="species-scientific">Plumeria rubra</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Monstera_deliciosa3.jpg/1280px-Monstera_deliciosa3.jpg" alt="Monstera Deliciosa" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Monstera Deliciosa</div>
+                    <div class="species-scientific">Monstera deliciosa</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Zamia_furfuracea_1.jpg/1280px-Zamia_furfuracea_1.jpg" alt="Zamia" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Zamia</div>
+                    <div class="species-scientific">Zamia furfuracea</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coccoloba_uvifera_kz2.jpg/1280px-Coccoloba_uvifera_kz2.jpg" alt="Uva da Praia" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Uva da Praia</div>
+                    <div class="species-scientific">Coccoloba uvifera</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Alocasia_macrorrhizos_L1020024.jpg/1280px-Alocasia_macrorrhizos_L1020024.jpg" alt="Orelha de Elefante" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Orelha de Elefante</div>
+                    <div class="species-scientific">Alocasia macrorrhizos</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Dypsis_lutescens1.jpg/1280px-Dypsis_lutescens1.jpg" alt="Areca Bambu" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Areca Bambu</div>
+                    <div class="species-scientific">Dypsis lutescens</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Senna_siamea_%28Cassia_siamea%29_flowers_in_Hyderabad%2C_AP_W_IMG_0985.jpg/1280px-Senna_siamea_%28Cassia_siamea%29_flowers_in_Hyderabad%2C_AP_W_IMG_0985.jpg" alt="Cassia" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Cassia</div>
+                    <div class="species-scientific">Senna siamea</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Curculigo_orchioides_01.JPG/1280px-Curculigo_orchioides_01.JPG" alt="Capim Palmeira" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Capim Palmeira</div>
+                    <div class="species-scientific">Curculigo orchioides</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Philodendron_Imperial_Red_2019-07-05_2875.jpg/1280px-Philodendron_Imperial_Red_2019-07-05_2875.jpg" alt="Philodendro" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Philodendro</div>
+                    <div class="species-scientific">Philodendron spp.</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Nephrolepis_exaltata_L._%282%29.JPG/1280px-Nephrolepis_exaltata_L._%282%29.JPG" alt="Samambaia" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Samambaia</div>
+                    <div class="species-scientific">Nephrolepis exaltata</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Casa EVA - Projeto de Paisagismo. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
