@@ -38,34 +38,37 @@
             font-weight: 300;
         }
 
-        .gallery {
-            max-width: 1400px;
+        /* Project Introduction Section */
+        .project-intro {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            text-align: center;
         }
 
-        .gallery h2 {
+        .intro-container h2 {
             font-size: 2rem;
             font-weight: 300;
             margin-bottom: 30px;
-            text-align: center;
             letter-spacing: 1px;
         }
 
-        .gallery-image {
-            width: 100%;
-            height: auto;
+        .intro-container p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
             margin-bottom: 20px;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: justify;
         }
 
-        .species {
+        /* Species and Plans Section */
+        .species-and-plans {
             background-color: #f9f9f9;
             padding: 60px 20px;
         }
 
-        .species h2 {
+        .species-and-plans h2,
+        .species-and-plans h3 {
             font-size: 2rem;
             font-weight: 300;
             margin-bottom: 40px;
@@ -73,11 +76,16 @@
             letter-spacing: 1px;
         }
 
+        .species-and-plans h3 {
+            font-size: 1.8rem;
+            margin-top: 60px;
+        }
+
         .species-grid {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             gap: 30px;
         }
 
@@ -114,6 +122,112 @@
             font-size: 0.95rem;
             color: #666;
             font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .species-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .gallery h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            cursor: zoom-in;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            cursor: zoom-out;
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #ccc;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 1.1rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 4px;
         }
 
         footer {
@@ -127,13 +241,21 @@
         /* Responsive breakpoints */
         @media (min-width: 768px) {
             .species-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (min-width: 1024px) {
             .species-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -144,68 +266,36 @@
         <p>Projeto de Paisagismo - Praia do Estaleiro</p>
     </header>
 
-    <section class="gallery">
-        <h2>Visualizações 3D</h2>
-
-        <!-- Deck Views -->
-        <img src="public/images/renders/deck-01.png" alt="Vista Deck 01" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/deck-02.png" alt="Vista Deck 02" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/deck-03.png" alt="Vista Deck 03" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/deck-04.png" alt="Vista Deck 04" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/deck-05.png" alt="Vista Deck 05" class="gallery-image" loading="lazy">
-
-        <!-- Final Renders -->
-        <img src="public/images/renders/Render_FINAISScene 1_2.png" alt="Render Final - Cena 1" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 2_2.png" alt="Render Final - Cena 2" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 3_2.png" alt="Render Final - Cena 3" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 4_2.png" alt="Render Final - Cena 4" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 5_2.png" alt="Render Final - Cena 5" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 6_2.png" alt="Render Final - Cena 6" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 7_2.png" alt="Render Final - Cena 7" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 8_2.png" alt="Render Final - Cena 8" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 9_2.png" alt="Render Final - Cena 9" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 10_2.png" alt="Render Final - Cena 10" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 11_2.png" alt="Render Final - Cena 11" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 12_2.png" alt="Render Final - Cena 12" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 13_2.png" alt="Render Final - Cena 13" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 14_2.png" alt="Render Final - Cena 14" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 15_2.png" alt="Render Final - Cena 15" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 16_2.png" alt="Render Final - Cena 16" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 18_2.png" alt="Render Final - Cena 18" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 20_2.png" alt="Render Final - Cena 20" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 21_2.png" alt="Render Final - Cena 21" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 22_2.png" alt="Render Final - Cena 22" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 23_2.png" alt="Render Final - Cena 23" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 24_2.png" alt="Render Final - Cena 24" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 25_2.png" alt="Render Final - Cena 25" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 26_2.png" alt="Render Final - Cena 26" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 27_1.png" alt="Render Final - Cena 27" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 28_1.png" alt="Render Final - Cena 28" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 29_1.png" alt="Render Final - Cena 29" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 30_1.png" alt="Render Final - Cena 30" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 31_1.png" alt="Render Final - Cena 31" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 32_1.png" alt="Render Final - Cena 32" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 33_1.png" alt="Render Final - Cena 33" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 36_1.png" alt="Render Final - Cena 36" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 37_1.png" alt="Render Final - Cena 37" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 38_1.png" alt="Render Final - Cena 38" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 39_1.png" alt="Render Final - Cena 39" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Render_FINAISScene 40.png" alt="Render Final - Cena 40" class="gallery-image" loading="lazy">
-
-        <!-- Additional Scenes -->
-        <img src="public/images/renders/Scene 2.png" alt="Cena 2" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Scene 3.png" alt="Cena 3" class="gallery-image" loading="lazy">
-        <img src="public/images/renders/Scene 4.png" alt="Cena 4" class="gallery-image" loading="lazy">
+    <!-- Project Introduction -->
+    <section class="project-intro">
+        <div class="intro-container">
+            <h2>Sobre o Projeto</h2>
+            <p>
+                Casa EVA é um projeto de paisagismo residencial desenvolvido para a
+                Praia do Estaleiro, em Balneário Camboriú, Santa Catarina. O projeto
+                harmoniza espécies nativas brasileiras com design contemporâneo,
+                criando um jardim tropical que valoriza a biodiversidade local e
+                proporciona um ambiente sustentável e acolhedor.
+            </p>
+            <p>
+                Com foco em plantas nativas e adaptadas ao clima litorâneo, o paisagismo
+                integra funcionalidade e estética, oferecendo áreas de convivência,
+                contemplação e conexão com a natureza.
+            </p>
+        </div>
     </section>
 
-    <section class="species">
-        <h2>Espécies Brasileiras Nativas</h2>
+    <!-- Species and Floor Plans -->
+    <section class="species-and-plans">
+        <h2>Espécies Selecionadas</h2>
+
         <div class="species-grid">
             <div class="species-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Chloroleucon_tortum_-_flower.jpg/1280px-Chloroleucon_tortum_-_flower.jpg" alt="Tataré" class="species-image" loading="lazy">
                 <div class="species-info">
                     <div class="species-name">Tataré</div>
                     <div class="species-scientific">Chloroleucon tortum</div>
+                    <div class="species-description">Árvore escultural de tronco tortuoso, nativa e exótica.</div>
                 </div>
             </div>
 
@@ -214,6 +304,7 @@
                 <div class="species-info">
                     <div class="species-name">Jabuticabeira</div>
                     <div class="species-scientific">Plinia cauliflora</div>
+                    <div class="species-description">Frutífera nativa brasileira, frutos no tronco.</div>
                 </div>
             </div>
 
@@ -222,38 +313,43 @@
                 <div class="species-info">
                     <div class="species-name">Jasmim Manga</div>
                     <div class="species-scientific">Plumeria rubra</div>
+                    <div class="species-description">Flores perfumadas e tropicais com caule escultural.</div>
                 </div>
             </div>
 
             <div class="species-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Monstera_deliciosa3.jpg/1280px-Monstera_deliciosa3.jpg" alt="Monstera Deliciosa" class="species-image" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Senna_siamea_%28Cassia_siamea%29_flowers_in_Hyderabad%2C_AP_W_IMG_0985.jpg/1280px-Senna_siamea_%28Cassia_siamea%29_flowers_in_Hyderabad%2C_AP_W_IMG_0985.jpg" alt="Cassia Seyal" class="species-image" loading="lazy">
                 <div class="species-info">
-                    <div class="species-name">Monstera Deliciosa</div>
-                    <div class="species-scientific">Monstera deliciosa</div>
-                </div>
-            </div>
-
-            <div class="species-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Zamia_furfuracea_1.jpg/1280px-Zamia_furfuracea_1.jpg" alt="Zamia" class="species-image" loading="lazy">
-                <div class="species-info">
-                    <div class="species-name">Zamia</div>
-                    <div class="species-scientific">Zamia furfuracea</div>
+                    <div class="species-name">Cassia Seyal</div>
+                    <div class="species-scientific">Vachellia seyal</div>
+                    <div class="species-description">Acácia de flores amarelas e tronco avermelhado.</div>
                 </div>
             </div>
 
             <div class="species-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coccoloba_uvifera_kz2.jpg/1280px-Coccoloba_uvifera_kz2.jpg" alt="Uva da Praia" class="species-image" loading="lazy">
                 <div class="species-info">
-                    <div class="species-name">Uva da Praia</div>
+                    <div class="species-name">Coccoloba (Uva da Praia)</div>
                     <div class="species-scientific">Coccoloba uvifera</div>
+                    <div class="species-description">Folhas arredondadas e resistentes, ideal para litoral.</div>
                 </div>
             </div>
 
             <div class="species-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Alocasia_macrorrhizos_L1020024.jpg/1280px-Alocasia_macrorrhizos_L1020024.jpg" alt="Orelha de Elefante" class="species-image" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1586079594344-952fa35a4623?w=800" alt="Augusta" class="species-image" loading="lazy">
                 <div class="species-info">
-                    <div class="species-name">Orelha de Elefante</div>
-                    <div class="species-scientific">Alocasia macrorrhizos</div>
+                    <div class="species-name">Augusta</div>
+                    <div class="species-scientific">Augusta longifolia</div>
+                    <div class="species-description">Arbusto florífero, atrativo para beija-flores.</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Chamaedorea_elegans_leaf.jpg/1280px-Chamaedorea_elegans_leaf.jpg" alt="Palmeira Elegance" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Palmeira Elegance</div>
+                    <div class="species-scientific">Chamaedorea elegans</div>
+                    <div class="species-description">Palmeira fina e elegante para meia-sombra.</div>
                 </div>
             </div>
 
@@ -262,30 +358,52 @@
                 <div class="species-info">
                     <div class="species-name">Areca Bambu</div>
                     <div class="species-scientific">Dypsis lutescens</div>
+                    <div class="species-description">Palmeira entouceirada amarelada, volume e privacidade.</div>
                 </div>
             </div>
 
             <div class="species-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Senna_siamea_%28Cassia_siamea%29_flowers_in_Hyderabad%2C_AP_W_IMG_0985.jpg/1280px-Senna_siamea_%28Cassia_siamea%29_flowers_in_Hyderabad%2C_AP_W_IMG_0985.jpg" alt="Cassia" class="species-image" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Chamaedorea_seifrizii_kz1.jpg/1280px-Chamaedorea_seifrizii_kz1.jpg" alt="Chameodora" class="species-image" loading="lazy">
                 <div class="species-info">
-                    <div class="species-name">Cassia</div>
-                    <div class="species-scientific">Senna siamea</div>
+                    <div class="species-name">Chameodora</div>
+                    <div class="species-scientific">Chamaedorea seifrizii</div>
+                    <div class="species-description">Palmeira de bambu, ideal para áreas sombreadas.</div>
                 </div>
             </div>
 
             <div class="species-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Curculigo_orchioides_01.JPG/1280px-Curculigo_orchioides_01.JPG" alt="Capim Palmeira" class="species-image" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Zamia_furfuracea_1.jpg/1280px-Zamia_furfuracea_1.jpg" alt="Zamia" class="species-image" loading="lazy">
                 <div class="species-info">
-                    <div class="species-name">Capim Palmeira</div>
-                    <div class="species-scientific">Curculigo orchioides</div>
+                    <div class="species-name">Zamia</div>
+                    <div class="species-scientific">Zamia furfuracea</div>
+                    <div class="species-description">Aspeto pré-histórico, folhas rígidas e ornamentais.</div>
                 </div>
             </div>
 
             <div class="species-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Philodendron_Imperial_Red_2019-07-05_2875.jpg/1280px-Philodendron_Imperial_Red_2019-07-05_2875.jpg" alt="Philodendro" class="species-image" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Syagrus_romanzoffiana_Habito_2010-1-31_SierraMadrona.jpg/1280px-Syagrus_romanzoffiana_Habito_2010-1-31_SierraMadrona.jpg" alt="Palmeira Jerivá" class="species-image" loading="lazy">
                 <div class="species-info">
-                    <div class="species-name">Philodendro</div>
-                    <div class="species-scientific">Philodendron spp.</div>
+                    <div class="species-name">Palmeira Jerivá</div>
+                    <div class="species-scientific">Syagrus romanzoffiana</div>
+                    <div class="species-description">Palmeira nativa imponente, usada como destaque.</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Monstera_deliciosa3.jpg/1280px-Monstera_deliciosa3.jpg" alt="Monstera Deliciosa" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Monstera Deliciosa (Costela de Adão)</div>
+                    <div class="species-scientific">Monstera deliciosa</div>
+                    <div class="species-description">Folhas gigantes recortadas, tropicalidade marcante.</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Alocasia_macrorrhizos_L1020024.jpg/1280px-Alocasia_macrorrhizos_L1020024.jpg" alt="Orelha de Elefante" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Orelha de Elefante</div>
+                    <div class="species-scientific">Alocasia macrorrhizos</div>
+                    <div class="species-description">Folhas imensas em formato de coração.</div>
                 </div>
             </div>
 
@@ -294,13 +412,227 @@
                 <div class="species-info">
                     <div class="species-name">Samambaia</div>
                     <div class="species-scientific">Nephrolepis exaltata</div>
+                    <div class="species-description">Volume verde pendente, textura delicada.</div>
                 </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Philodendron_Imperial_Red_2019-07-05_2875.jpg/1280px-Philodendron_Imperial_Red_2019-07-05_2875.jpg" alt="Philodendro" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Philodendro</div>
+                    <div class="species-scientific">Philodendron bipinnatifidum</div>
+                    <div class="species-description">Guaimbê nativo, folhas recortadas e robustas.</div>
+                </div>
+            </div>
+
+            <div class="species-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Curculigo_orchioides_01.JPG/1280px-Curculigo_orchioides_01.JPG" alt="Curculigo" class="species-image" loading="lazy">
+                <div class="species-info">
+                    <div class="species-name">Curculigo (Capim-palmeira)</div>
+                    <div class="species-scientific">Molineria capitulata</div>
+                    <div class="species-description">Capim-palmeira, folhagem plissada para forração.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floor Plans -->
+        <h3>Plantas Baixas 2D</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/plans/prancha-01.png" alt="Prancha 01 - Paisagismo" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/plans/prancha-02.png" alt="Prancha 02 - Paisagismo" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/plans/prancha-03.png" alt="Prancha 03 - Paisagismo" loading="lazy">
             </div>
         </div>
     </section>
 
+    <!-- 3D Gallery -->
+    <section class="gallery">
+        <h2>Visualizações 3D</h2>
+
+        <div class="gallery-grid">
+            <!-- Deck Views -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/deck-01.png" alt="Vista Deck 01" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/deck-02.png" alt="Vista Deck 02" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/deck-03.png" alt="Vista Deck 03" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/deck-04.png" alt="Vista Deck 04" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/deck-05.png" alt="Vista Deck 05" loading="lazy">
+            </div>
+
+            <!-- Final Renders -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 1_2.png" alt="Render Final - Cena 1" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 2_2.png" alt="Render Final - Cena 2" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 3_2.png" alt="Render Final - Cena 3" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 4_2.png" alt="Render Final - Cena 4" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 5_2.png" alt="Render Final - Cena 5" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 6_2.png" alt="Render Final - Cena 6" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 7_2.png" alt="Render Final - Cena 7" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 8_2.png" alt="Render Final - Cena 8" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 9_2.png" alt="Render Final - Cena 9" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 10_2.png" alt="Render Final - Cena 10" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 11_2.png" alt="Render Final - Cena 11" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 12_2.png" alt="Render Final - Cena 12" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 13_2.png" alt="Render Final - Cena 13" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 14_2.png" alt="Render Final - Cena 14" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 15_2.png" alt="Render Final - Cena 15" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 16_2.png" alt="Render Final - Cena 16" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 18_2.png" alt="Render Final - Cena 18" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 20_2.png" alt="Render Final - Cena 20" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 21_2.png" alt="Render Final - Cena 21" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 22_2.png" alt="Render Final - Cena 22" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 23_2.png" alt="Render Final - Cena 23" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 24_2.png" alt="Render Final - Cena 24" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 25_2.png" alt="Render Final - Cena 25" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 26_2.png" alt="Render Final - Cena 26" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 27_1.png" alt="Render Final - Cena 27" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 28_1.png" alt="Render Final - Cena 28" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 29_1.png" alt="Render Final - Cena 29" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 30_1.png" alt="Render Final - Cena 30" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 31_1.png" alt="Render Final - Cena 31" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 32_1.png" alt="Render Final - Cena 32" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 33_1.png" alt="Render Final - Cena 33" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 36_1.png" alt="Render Final - Cena 36" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 37_1.png" alt="Render Final - Cena 37" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 38_1.png" alt="Render Final - Cena 38" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 39_1.png" alt="Render Final - Cena 39" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Render_FINAISScene 40.png" alt="Render Final - Cena 40" loading="lazy">
+            </div>
+
+            <!-- Additional Scenes -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Scene 2.png" alt="Cena 2" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Scene 3.png" alt="Cena 3" loading="lazy">
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="public/images/renders/Scene 4.png" alt="Cena 4" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
     <footer>
         <p>&copy; 2025 Casa EVA - Projeto de Paisagismo. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            const img = element.querySelector('img');
+            lightbox.style.display = 'block';
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.innerHTML = img.alt;
+
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 </html>
