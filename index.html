@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa EVA - Paisagismo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,74 +14,176 @@
             box-sizing: border-box;
         }
 
+        :root {
+            /* Typography */
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            /* Type Scale */
+            --text-h1: 3.5rem;
+            --text-h2: 2.75rem;
+            --text-h3: 2.125rem;
+            --text-h4: 1.625rem;
+            --text-large: 1.25rem;
+            --text-base: 1rem;
+            --text-small: 0.875rem;
+
+            /* Colors - Warm Gray + Earth Tones */
+            --color-white: #FAFAF9;
+            --color-gray-50: #F5F5F4;
+            --color-gray-100: #E7E5E4;
+            --color-gray-200: #D6D3D1;
+            --color-gray-500: #78716C;
+            --color-gray-700: #44403C;
+            --color-gray-900: #1C1917;
+            --color-accent-moss: #5F6F52;
+            --color-accent-sage: #7A8A7E;
+
+            /* Shadows - Layered & Refined */
+            --shadow-sm: 0 1px 2px 0 rgba(28, 25, 23, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.08), 0 2px 4px -1px rgba(28, 25, 23, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.1), 0 4px 6px -2px rgba(28, 25, 23, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(28, 25, 23, 0.12), 0 10px 10px -5px rgba(28, 25, 23, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(28, 25, 23, 0.25);
+            --shadow-hover: 0 20px 40px -10px rgba(28, 25, 23, 0.15), 0 10px 20px -5px rgba(28, 25, 23, 0.08);
+
+            /* Spacing (8px base) */
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.5rem;
+            --space-6: 2rem;
+            --space-8: 3rem;
+            --space-10: 4rem;
+            --space-12: 6rem;
+            --space-16: 8rem;
+
+            /* Animation Timing */
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-fast: 150ms;
+            --duration-normal: 300ms;
+            --duration-slow: 500ms;
+            --duration-slower: 700ms;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+            :root {
+                --text-h1: 2.5rem;
+                --text-h2: 2rem;
+                --text-h3: 1.625rem;
+            }
+        }
+
         body {
-            font-family: Helvetica, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
+            font-family: var(--font-sans);
+            background-color: var(--color-white);
+            color: var(--color-gray-900);
             line-height: 1.6;
         }
 
         header {
             text-align: center;
-            padding: 60px 20px 40px;
-            background-color: #f9f9f9;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 8rem 2rem 6rem;
+            background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+            border-bottom: 1px solid var(--color-gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add subtle texture */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2378716c' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
+            pointer-events: none;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-family: var(--font-serif);
+            font-size: var(--text-h1);
             font-weight: 300;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.1em;
+            position: relative;
+            z-index: 1;
         }
 
         header p {
-            font-size: 1.1rem;
-            color: #666;
-            font-weight: 300;
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            color: var(--color-gray-700);
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            position: relative;
+            z-index: 1;
         }
 
         /* Project Introduction Section */
         .project-intro {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: var(--space-16) var(--space-6);
             text-align: center;
         }
 
         .intro-container h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+            font-family: var(--font-serif);
+            font-size: var(--text-h2);
+            font-weight: 400;
+            margin-bottom: var(--space-8);
+            letter-spacing: 0.05em;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Elegant underline accent */
+        .intro-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent-moss), transparent);
         }
 
         .intro-container p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
-            text-align: justify;
+            font-size: var(--text-large);
+            line-height: 1.75;
+            color: var(--color-gray-700);
+            margin-bottom: var(--space-6);
+            text-align: left;
+        }
+
+        .intro-container p:first-of-type {
+            color: var(--color-gray-900);
+            font-weight: 400;
         }
 
         /* Species and Plans Section */
         .species-and-plans {
-            background-color: #f9f9f9;
-            padding: 60px 20px;
+            background-color: var(--color-gray-50);
+            padding: var(--space-16) var(--space-6);
         }
 
         .species-and-plans h2,
         .species-and-plans h3 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 40px;
+            font-family: var(--font-serif);
+            font-size: var(--text-h2);
+            font-weight: 400;
+            margin-bottom: var(--space-10);
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 0.05em;
         }
 
         .species-and-plans h3 {
-            font-size: 1.8rem;
-            margin-top: 60px;
+            font-size: var(--text-h3);
+            margin-top: var(--space-16);
         }
 
         .species-grid {
@@ -86,72 +191,101 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            gap: 30px;
+            gap: var(--space-8);
         }
 
         .species-card {
-            background-color: #ffffff;
-            border-radius: 8px;
+            background-color: var(--color-white);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-gray-100);
+            transition: transform var(--duration-normal) var(--ease-expo),
+                        box-shadow var(--duration-normal) var(--ease-expo),
+                        border-color var(--duration-normal) var(--ease-expo);
             cursor: pointer;
+            position: relative;
         }
 
         .species-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-accent-sage);
         }
 
         .species-image {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
+            transition: transform var(--duration-slow) var(--ease-expo);
+        }
+
+        .species-card:hover .species-image {
+            transform: scale(1.05);
         }
 
         .species-info {
-            padding: 20px;
+            padding: var(--space-6);
+            background: var(--color-white);
+            position: relative;
+        }
+
+        /* Subtle accent line */
+        .species-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: var(--space-6);
+            right: var(--space-6);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-accent-sage), transparent);
         }
 
         .species-name {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 5px;
+            font-family: var(--font-serif);
+            font-size: var(--text-h4);
+            font-weight: 500;
+            margin-top: var(--space-2);
+            margin-bottom: 0.25rem;
+            color: var(--color-gray-900);
         }
 
         .species-scientific {
+            font-family: var(--font-sans);
             font-size: 0.95rem;
-            color: #666;
+            color: var(--color-gray-500);
             font-style: italic;
-            margin-bottom: 10px;
+            margin-bottom: var(--space-3);
+            font-weight: 300;
         }
 
         .species-description {
             font-size: 0.9rem;
-            color: #666;
+            color: var(--color-gray-700);
             margin-top: 8px;
-            line-height: 1.4;
+            line-height: 1.6;
         }
 
         /* Gallery Section */
         .gallery {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: var(--space-16) var(--space-6);
         }
 
         .gallery h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 40px;
+            font-family: var(--font-serif);
+            font-size: var(--text-h2);
+            font-weight: 400;
+            margin-bottom: var(--space-10);
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 0.05em;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            gap: 20px;
+            gap: var(--space-5);
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -160,19 +294,21 @@
             position: relative;
             cursor: zoom-in;
             overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-gray-100);
+            transition: transform var(--duration-normal) var(--ease-smooth),
+                        box-shadow var(--duration-normal) var(--ease-smooth);
         }
 
         .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transform: scale(1.03);
+            box-shadow: var(--shadow-xl);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
             display: block;
         }
@@ -182,11 +318,10 @@
             display: none;
             position: fixed;
             z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(28, 25, 23, 0.96);
+            backdrop-filter: blur(8px);
             cursor: zoom-out;
         }
 
@@ -196,32 +331,50 @@
             max-width: 90%;
             max-height: 90%;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            box-shadow: var(--shadow-2xl);
+            border-radius: 4px;
+            animation: lightboxZoom var(--duration-normal) var(--ease-expo);
+        }
+
+        @keyframes lightboxZoom {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
 
         .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 40px;
+            top: 20px; right: 40px;
             color: #fff;
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
             z-index: 10000;
-            transition: color 0.3s ease;
+            transition: all var(--duration-fast) var(--ease-smooth);
+            background: rgba(255, 255, 255, 0.1);
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
 
         .lightbox-close:hover {
-            color: #ccc;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
         }
 
         .lightbox-caption {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
+            bottom: 20px; left: 50%;
             transform: translateX(-50%);
             color: #fff;
             font-size: 1.1rem;
@@ -233,20 +386,42 @@
 
         footer {
             text-align: center;
-            padding: 30px 20px;
-            background-color: #333333;
-            color: #ffffff;
+            padding: var(--space-12) var(--space-6) var(--space-10);
+            background: linear-gradient(180deg, var(--color-gray-900) 0%, #0F0E0D 100%);
+            color: var(--color-gray-200);
             font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-accent-moss), transparent);
+        }
+
+        footer p {
+            color: var(--color-gray-200);
+            margin-bottom: var(--space-3);
+            font-weight: 300;
+        }
+
+        footer p:last-child {
+            font-size: var(--text-small);
+            color: var(--color-gray-500);
         }
 
         /* Responsive breakpoints */
         @media (min-width: 768px) {
             .species-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-8);
             }
-
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-6);
             }
         }
 
@@ -254,9 +429,56 @@
             .species-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .species-grid,
+            .gallery-grid {
+                gap: var(--space-10);
+            }
+        }
+
+        /* Fade-in animations */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-slower) var(--ease-expo),
+                        transform var(--duration-slower) var(--ease-expo);
+        }
+
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delays for cards */
+        .species-card:nth-child(1) { transition-delay: 0ms; }
+        .species-card:nth-child(2) { transition-delay: 100ms; }
+        .species-card:nth-child(3) { transition-delay: 200ms; }
+        .species-card:nth-child(4) { transition-delay: 300ms; }
+        .species-card:nth-child(5) { transition-delay: 400ms; }
+        .species-card:nth-child(6) { transition-delay: 500ms; }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent-moss), var(--color-accent-sage));
+            z-index: 9999;
+            transition: width 0.1s linear;
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -608,6 +830,8 @@
         <p>&copy; 2025 Casa EVA - Todos os direitos reservados.</p>
     </footer>
 
+    <div class="scroll-progress"></div>
+
     <script>
         function openLightbox(element) {
             const lightbox = document.getElementById('lightbox');
@@ -616,14 +840,12 @@
 
             const img = element.querySelector('img');
             lightbox.style.display = 'block';
-            
-            // Use data-full for high-res, fallback to src
+
             const fullResSrc = img.getAttribute('data-full') || img.src;
             lightboxImg.src = fullResSrc;
             lightboxImg.alt = img.alt;
             lightboxCaption.innerHTML = img.alt;
 
-            // Prevent body scroll when lightbox is open
             document.body.style.overflow = 'hidden';
         }
 
@@ -637,6 +859,55 @@
             if (event.key === 'Escape') {
                 closeLightbox();
             }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.pageYOffset / windowHeight) * 100;
+            document.querySelector('.scroll-progress').style.width = scrolled + '%';
+        });
+
+        // Subtle parallax on header
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const header = document.querySelector('header');
+                    if (scrolled < 600) {
+                        header.style.transform = `translateY(${scrolled * 0.3}px)`;
+                        header.style.opacity = 1 - (scrolled / 600);
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateElements = document.querySelectorAll(
+                '.species-card, .gallery-item, .intro-container, h2, h3'
+            );
+            animateElements.forEach(el => {
+                el.classList.add('fade-in-element');
+                fadeInObserver.observe(el);
+            });
         });
     </script>
 </body>
