@@ -83,43 +83,251 @@
             line-height: 1.6;
         }
 
-        header {
-            text-align: center;
-            padding: 8rem 2rem 6rem;
-            background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-            border-bottom: 1px solid var(--color-gray-200);
-            position: relative;
-            overflow: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Add subtle texture */
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(28, 25, 23, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(95, 111, 82, 0.3);
+            transition: all var(--duration-normal) var(--ease-smooth);
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 2rem;
+            background: rgba(28, 25, 23, 0.98);
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: 40px;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: opacity var(--duration-normal) var(--ease-smooth);
+        }
+
+        .nav-logo:hover {
+            opacity: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-gray-100);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            transition: color var(--duration-normal) var(--ease-smooth);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent-moss);
+            transition: width var(--duration-normal) var(--ease-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-white);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-credits {
+            font-size: 0.75rem;
+            color: var(--color-gray-500);
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-credits {
+                display: block;
+                max-width: 300px;
+                text-align: right;
+                line-height: 1.4;
+            }
+        }
+
+        /* Mobile Menu Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(28, 25, 23, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: transform var(--duration-normal) var(--ease-smooth),
+                            opacity var(--duration-normal) var(--ease-smooth);
+                pointer-events: none;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+        /* Decorative Side Borders */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            z-index: 9998;
+            background: linear-gradient(180deg, var(--color-accent-moss), var(--color-accent-sage), var(--color-accent-moss));
+            opacity: 0.3;
+        }
+
+        body::before {
+            left: 0;
+        }
+
+        body::after {
+            right: 0;
+        }
+
+        /* Hero Header */
+        header {
+            text-align: center;
+            padding: 12rem 2rem 8rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 72px;
+        }
+
+        /* Background Image with Overlay */
         header::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2378716c' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.4;
-            pointer-events: none;
+            background-image: url('public/images/renders/Render_FINAISScene 1_2.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        /* Gradient Overlay */
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg,
+                rgba(250, 250, 249, 0.95) 0%,
+                rgba(250, 250, 249, 0.85) 50%,
+                rgba(250, 250, 249, 0.95) 100%);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         header h1 {
             font-family: var(--font-serif);
-            font-size: var(--text-h1);
+            font-size: 4rem;
             font-weight: 300;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.1em;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1rem;
+            letter-spacing: 0.15em;
+            color: var(--color-gray-900);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
         }
 
-        header p {
+        header .subtitle {
             font-family: var(--font-sans);
-            font-size: var(--text-base);
+            font-size: var(--text-large);
             color: var(--color-gray-700);
             font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        header .location {
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            color: var(--color-gray-500);
+            font-weight: 300;
             letter-spacing: 0.025em;
-            position: relative;
-            z-index: 1;
+        }
+
+        /* Accent Line */
+        .header-accent {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent-moss), transparent);
+            margin: 2rem auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 8rem 1.5rem 5rem;
+                min-height: 60vh;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            body::before,
+            body::after {
+                width: 4px;
+            }
         }
 
         /* Project Introduction Section */
@@ -484,9 +692,31 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <img src="public/images/logo.webp" alt="Tanus Saab Paisagismo" class="nav-logo">
+
+        <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#especies">Espécies</a></li>
+            <li><a href="#plantas-baixas">Plantas Baixas 2D</a></li>
+            <li><a href="#visualizacoes">Visualizações 3D</a></li>
+        </ul>
+
+        <div class="nav-credits">
+            Tanus Saab & Gustavo Valencio | 3D: Lucas Nakamura
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
     <header>
-        <h1>CASA EVA</h1>
-        <p>Projeto de Paisagismo - Praia do Estaleiro</p>
+        <div class="header-content">
+            <h1>CASA EVA</h1>
+            <div class="header-accent"></div>
+            <p class="subtitle">Projeto de Paisagismo Residencial</p>
+            <p class="location">Praia do Estaleiro, Balneário Camboriú - SC</p>
+        </div>
     </header>
 
     <!-- Project Introduction -->
@@ -509,7 +739,7 @@
     </section>
 
     <!-- Species and Floor Plans -->
-    <section class="species-and-plans">
+    <section class="species-and-plans" id="especies">
         <h2>Espécies Selecionadas</h2>
 
         <div class="species-grid">
@@ -659,7 +889,7 @@
         </div>
 
         <!-- Floor Plans -->
-        <h3>Plantas Baixas 2D</h3>
+        <h3 id="plantas-baixas">Plantas Baixas 2D</h3>
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox(this)">
                 <img src="public/images/plans/thumbs/PLANTA_TERREO.webp" data-full="public/images/plans/PLANTA_TERREO.webp" alt="Planta Térreo - Paisagismo" loading="lazy" decoding="async">
@@ -674,7 +904,7 @@
     </section>
 
     <!-- 3D Gallery -->
-    <section class="gallery">
+    <section class="gallery" id="visualizacoes">
         <h2>Visualizações 3D</h2>
 
         <div class="gallery-grid">
@@ -908,6 +1138,34 @@
                 el.classList.add('fade-in-element');
                 fadeInObserver.observe(el);
             });
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
         });
     </script>
 </body>
