@@ -95,6 +95,7 @@
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .species-card:hover {
@@ -290,8 +291,8 @@
         <h2>Espécies Selecionadas</h2>
 
         <div class="species-grid">
-            <div class="species-card">
-                <img src="public/images/species/Arvore_tatare.webp" alt="Tataré" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/Arvore_tatare.webp" data-full="public/images/species/Arvore_tatare.webp" alt="Tataré" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Tataré</div>
                     <div class="species-scientific">Chloroleucon tortum</div>
@@ -299,8 +300,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/arvore_jabuticabeira.webp" alt="Jabuticabeira" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/arvore_jabuticabeira.webp" data-full="public/images/species/arvore_jabuticabeira.webp" alt="Jabuticabeira" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Jabuticabeira</div>
                     <div class="species-scientific">Plinia cauliflora</div>
@@ -308,8 +309,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/Jasmim-manga-–-Plumeria-rubra.webp" alt="Jasmim Manga" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/Jasmim-manga-–-Plumeria-rubra.webp" data-full="public/images/species/Jasmim-manga-–-Plumeria-rubra.webp" alt="Jasmim Manga" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Jasmim Manga</div>
                     <div class="species-scientific">Plumeria rubra</div>
@@ -317,8 +318,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/arvore_acacia_de_seyal.webp" alt="Acácia de Seyal" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/arvore_acacia_de_seyal.webp" data-full="public/images/species/arvore_acacia_de_seyal.webp" alt="Acácia de Seyal" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Acácia de Seyal</div>
                     <div class="species-scientific">Vachellia seyal</div>
@@ -326,8 +327,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/coccoloba_uvifera_arvore.webp" alt="Uva da Praia" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/coccoloba_uvifera_arvore.webp" data-full="public/images/species/coccoloba_uvifera_arvore.webp" alt="Uva da Praia" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Coccoloba (Uva da Praia)</div>
                     <div class="species-scientific">Coccoloba uvifera</div>
@@ -335,8 +336,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/geniparana_arvore_gustavia_augusta.webp" alt="Augusta" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/geniparana_arvore_gustavia_augusta.webp" data-full="public/images/species/geniparana_arvore_gustavia_augusta.webp" alt="Augusta" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Augusta (Geniparana)</div>
                     <div class="species-scientific">Gustavia augusta</div>
@@ -344,8 +345,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/palmeira_elegance.webp" alt="Palmeira Elegance" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/palmeira_elegance.webp" data-full="public/images/species/palmeira_elegance.webp" alt="Palmeira Elegance" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Palmeira Elegance</div>
                     <div class="species-scientific">Chamaedorea elegans</div>
@@ -353,8 +354,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/palmeira_areca_bambu.webp" alt="Areca Bambu" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/palmeira_areca_bambu.webp" data-full="public/images/species/palmeira_areca_bambu.webp" alt="Areca Bambu" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Areca Bambu</div>
                     <div class="species-scientific">Dypsis lutescens</div>
@@ -362,8 +363,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/palmeira_chameodora.webp" alt="Chameodora" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/palmeira_chameodora.webp" data-full="public/images/species/palmeira_chameodora.webp" alt="Chameodora" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Chameodora</div>
                     <div class="species-scientific">Chamaedorea seifrizii</div>
@@ -371,8 +372,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/zamia_zamia_furfuracea_folhagem.webp" alt="Zamia" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/zamia_zamia_furfuracea_folhagem.webp" data-full="public/images/species/zamia_zamia_furfuracea_folhagem.webp" alt="Zamia" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Zamia</div>
                     <div class="species-scientific">Zamia furfuracea</div>
@@ -380,8 +381,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/palmeira_jeriva_syagrus_romanzoffiana.webp" alt="Palmeira Jerivá" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/palmeira_jeriva_syagrus_romanzoffiana.webp" data-full="public/images/species/palmeira_jeriva_syagrus_romanzoffiana.webp" alt="Palmeira Jerivá" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Palmeira Jerivá</div>
                     <div class="species-scientific">Syagrus romanzoffiana</div>
@@ -389,8 +390,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/Monstera Deliciosa (Costela de Adão).webp" alt="Monstera Deliciosa" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/Monstera Deliciosa (Costela de Adão).webp" data-full="public/images/species/Monstera Deliciosa (Costela de Adão).webp" alt="Monstera Deliciosa" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Monstera Deliciosa (Costela de Adão)</div>
                     <div class="species-scientific">Monstera deliciosa</div>
@@ -398,8 +399,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/Orelha de Elefante.webp" alt="Orelha de Elefante" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/Orelha de Elefante.webp" data-full="public/images/species/Orelha de Elefante.webp" alt="Orelha de Elefante" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Orelha de Elefante</div>
                     <div class="species-scientific">Alocasia macrorrhizos</div>
@@ -407,8 +408,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/Samambaia.webp" alt="Samambaia" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/Samambaia.webp" data-full="public/images/species/Samambaia.webp" alt="Samambaia" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Samambaia</div>
                     <div class="species-scientific">Nephrolepis exaltata</div>
@@ -416,8 +417,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/Guaimbe_Philodendron_bipinnatifidum​.webp" alt="Philodendro" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/Guaimbe_Philodendron_bipinnatifidum​.webp" data-full="public/images/species/Guaimbe_Philodendron_bipinnatifidum​.webp" alt="Philodendro" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Guaimbê (Philodendron)</div>
                     <div class="species-scientific">Philodendron bipinnatifidum</div>
@@ -425,8 +426,8 @@
                 </div>
             </div>
 
-            <div class="species-card">
-                <img src="public/images/species/Curculigo-capitulata-01.webp" alt="Curculigo" class="species-image" loading="lazy" decoding="async">
+            <div class="species-card" onclick="openLightbox(this)">
+                <img src="public/images/species/thumbs/Curculigo-capitulata-01.webp" data-full="public/images/species/Curculigo-capitulata-01.webp" alt="Curculigo" class="species-image" loading="lazy" decoding="async">
                 <div class="species-info">
                     <div class="species-name">Curculigo (Capim-palmeira)</div>
                     <div class="species-scientific">Molineria capitulata</div>
@@ -439,13 +440,13 @@
         <h3>Plantas Baixas 2D</h3>
         <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/plans/PLANTA_TERREO.webp" alt="Planta Térreo - Paisagismo" loading="lazy" decoding="async">
+                <img src="public/images/plans/thumbs/PLANTA_TERREO.webp" data-full="public/images/plans/PLANTA_TERREO.webp" alt="Planta Térreo - Paisagismo" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/plans/PLANTA_PRIMEIRO_PAVIMENTO.webp" alt="Planta Primeiro Pavimento - Paisagismo" loading="lazy" decoding="async">
+                <img src="public/images/plans/thumbs/PLANTA_PRIMEIRO_PAVIMENTO.webp" data-full="public/images/plans/PLANTA_PRIMEIRO_PAVIMENTO.webp" alt="Planta Primeiro Pavimento - Paisagismo" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/plans/PLANTA_COBERTURA.webp" alt="Planta Cobertura - Paisagismo" loading="lazy" decoding="async">
+                <img src="public/images/plans/thumbs/PLANTA_COBERTURA.webp" data-full="public/images/plans/PLANTA_COBERTURA.webp" alt="Planta Cobertura - Paisagismo" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -457,140 +458,140 @@
         <div class="gallery-grid">
             <!-- Deck Views -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/deck-01.webp" alt="Vista Deck 01" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/deck-01.webp" data-full="public/images/renders/deck-01.webp" alt="Vista Deck 01" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/deck-02.webp" alt="Vista Deck 02" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/deck-02.webp" data-full="public/images/renders/deck-02.webp" alt="Vista Deck 02" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/deck-03.webp" alt="Vista Deck 03" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/deck-03.webp" data-full="public/images/renders/deck-03.webp" alt="Vista Deck 03" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/deck-04.webp" alt="Vista Deck 04" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/deck-04.webp" data-full="public/images/renders/deck-04.webp" alt="Vista Deck 04" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/deck-05.webp" alt="Vista Deck 05" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/deck-05.webp" data-full="public/images/renders/deck-05.webp" alt="Vista Deck 05" loading="lazy" decoding="async">
             </div>
 
             <!-- Final Renders -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 1_2.webp" alt="Render Final - Cena 1" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 1_2.webp" data-full="public/images/renders/Render_FINAISScene 1_2.webp" alt="Render Final - Cena 1" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 2_2.webp" alt="Render Final - Cena 2" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 2_2.webp" data-full="public/images/renders/Render_FINAISScene 2_2.webp" alt="Render Final - Cena 2" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 3_2.webp" alt="Render Final - Cena 3" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 3_2.webp" data-full="public/images/renders/Render_FINAISScene 3_2.webp" alt="Render Final - Cena 3" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 4_2.webp" alt="Render Final - Cena 4" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 4_2.webp" data-full="public/images/renders/Render_FINAISScene 4_2.webp" alt="Render Final - Cena 4" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 5_2.webp" alt="Render Final - Cena 5" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 5_2.webp" data-full="public/images/renders/Render_FINAISScene 5_2.webp" alt="Render Final - Cena 5" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 6_2.webp" alt="Render Final - Cena 6" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 6_2.webp" data-full="public/images/renders/Render_FINAISScene 6_2.webp" alt="Render Final - Cena 6" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 7_2.webp" alt="Render Final - Cena 7" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 7_2.webp" data-full="public/images/renders/Render_FINAISScene 7_2.webp" alt="Render Final - Cena 7" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 8_2.webp" alt="Render Final - Cena 8" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 8_2.webp" data-full="public/images/renders/Render_FINAISScene 8_2.webp" alt="Render Final - Cena 8" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 9_2.webp" alt="Render Final - Cena 9" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 9_2.webp" data-full="public/images/renders/Render_FINAISScene 9_2.webp" alt="Render Final - Cena 9" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 10_2.webp" alt="Render Final - Cena 10" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 10_2.webp" data-full="public/images/renders/Render_FINAISScene 10_2.webp" alt="Render Final - Cena 10" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 11_2.webp" alt="Render Final - Cena 11" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 11_2.webp" data-full="public/images/renders/Render_FINAISScene 11_2.webp" alt="Render Final - Cena 11" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 12_2.webp" alt="Render Final - Cena 12" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 12_2.webp" data-full="public/images/renders/Render_FINAISScene 12_2.webp" alt="Render Final - Cena 12" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 13_2.webp" alt="Render Final - Cena 13" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 13_2.webp" data-full="public/images/renders/Render_FINAISScene 13_2.webp" alt="Render Final - Cena 13" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 14_2.webp" alt="Render Final - Cena 14" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 14_2.webp" data-full="public/images/renders/Render_FINAISScene 14_2.webp" alt="Render Final - Cena 14" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 15_2.webp" alt="Render Final - Cena 15" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 15_2.webp" data-full="public/images/renders/Render_FINAISScene 15_2.webp" alt="Render Final - Cena 15" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 16_2.webp" alt="Render Final - Cena 16" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 16_2.webp" data-full="public/images/renders/Render_FINAISScene 16_2.webp" alt="Render Final - Cena 16" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 18_2.webp" alt="Render Final - Cena 18" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 18_2.webp" data-full="public/images/renders/Render_FINAISScene 18_2.webp" alt="Render Final - Cena 18" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 20_2.webp" alt="Render Final - Cena 20" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 20_2.webp" data-full="public/images/renders/Render_FINAISScene 20_2.webp" alt="Render Final - Cena 20" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 21_2.webp" alt="Render Final - Cena 21" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 21_2.webp" data-full="public/images/renders/Render_FINAISScene 21_2.webp" alt="Render Final - Cena 21" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 22_2.webp" alt="Render Final - Cena 22" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 22_2.webp" data-full="public/images/renders/Render_FINAISScene 22_2.webp" alt="Render Final - Cena 22" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 23_2.webp" alt="Render Final - Cena 23" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 23_2.webp" data-full="public/images/renders/Render_FINAISScene 23_2.webp" alt="Render Final - Cena 23" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 24_2.webp" alt="Render Final - Cena 24" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 24_2.webp" data-full="public/images/renders/Render_FINAISScene 24_2.webp" alt="Render Final - Cena 24" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 25_2.webp" alt="Render Final - Cena 25" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 25_2.webp" data-full="public/images/renders/Render_FINAISScene 25_2.webp" alt="Render Final - Cena 25" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 26_2.webp" alt="Render Final - Cena 26" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 26_2.webp" data-full="public/images/renders/Render_FINAISScene 26_2.webp" alt="Render Final - Cena 26" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 27_1.webp" alt="Render Final - Cena 27" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 27_1.webp" data-full="public/images/renders/Render_FINAISScene 27_1.webp" alt="Render Final - Cena 27" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 28_1.webp" alt="Render Final - Cena 28" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 28_1.webp" data-full="public/images/renders/Render_FINAISScene 28_1.webp" alt="Render Final - Cena 28" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 29_1.webp" alt="Render Final - Cena 29" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 29_1.webp" data-full="public/images/renders/Render_FINAISScene 29_1.webp" alt="Render Final - Cena 29" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 30_1.webp" alt="Render Final - Cena 30" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 30_1.webp" data-full="public/images/renders/Render_FINAISScene 30_1.webp" alt="Render Final - Cena 30" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 31_1.webp" alt="Render Final - Cena 31" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 31_1.webp" data-full="public/images/renders/Render_FINAISScene 31_1.webp" alt="Render Final - Cena 31" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 32_1.webp" alt="Render Final - Cena 32" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 32_1.webp" data-full="public/images/renders/Render_FINAISScene 32_1.webp" alt="Render Final - Cena 32" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 33_1.webp" alt="Render Final - Cena 33" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 33_1.webp" data-full="public/images/renders/Render_FINAISScene 33_1.webp" alt="Render Final - Cena 33" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 36_1.webp" alt="Render Final - Cena 36" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 36_1.webp" data-full="public/images/renders/Render_FINAISScene 36_1.webp" alt="Render Final - Cena 36" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 37_1.webp" alt="Render Final - Cena 37" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 37_1.webp" data-full="public/images/renders/Render_FINAISScene 37_1.webp" alt="Render Final - Cena 37" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 38_1.webp" alt="Render Final - Cena 38" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 38_1.webp" data-full="public/images/renders/Render_FINAISScene 38_1.webp" alt="Render Final - Cena 38" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 39_1.webp" alt="Render Final - Cena 39" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 39_1.webp" data-full="public/images/renders/Render_FINAISScene 39_1.webp" alt="Render Final - Cena 39" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Render_FINAISScene 40.webp" alt="Render Final - Cena 40" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Render_FINAISScene 40.webp" data-full="public/images/renders/Render_FINAISScene 40.webp" alt="Render Final - Cena 40" loading="lazy" decoding="async">
             </div>
 
             <!-- Additional Scenes -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Scene 2.webp" alt="Cena 2" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Scene 2.webp" data-full="public/images/renders/Scene 2.webp" alt="Cena 2" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Scene 3.webp" alt="Cena 3" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Scene 3.webp" data-full="public/images/renders/Scene 3.webp" alt="Cena 3" loading="lazy" decoding="async">
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/Scene 4.webp" alt="Cena 4" loading="lazy" decoding="async">
+                <img src="public/images/renders/thumbs/Scene 4.webp" data-full="public/images/renders/Scene 4.webp" alt="Cena 4" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -615,7 +616,10 @@
 
             const img = element.querySelector('img');
             lightbox.style.display = 'block';
-            lightboxImg.src = img.src;
+            
+            // Use data-full for high-res, fallback to src
+            const fullResSrc = img.getAttribute('data-full') || img.src;
+            lightboxImg.src = fullResSrc;
             lightboxImg.alt = img.alt;
             lightboxCaption.innerHTML = img.alt;
 
