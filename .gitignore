@@ -23,3 +23,15 @@ RENDER_FINAL_28_NOVEMBRO/
 # OS files
 .DS_Store
 Thumbs.db
+
+# D5 Render project folder
+Casa_Eva/
+
+# Claude local settings
+.claude/
+
+# Source PDF and PNG folders
+PRANCHA_01_PAISAGISMO.pdf
+PRANCHA_02_PAISAGISMO.pdf
+PRANCHA_03_PAISAGISMO.pdf
+Plantas_PNG/
