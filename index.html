@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa EVA - Paisagismo</title>
+    <title>Casa EVA — Paisagismo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,125 +17,163 @@
         :root {
             /* Typography */
             --font-serif: 'Cormorant Garamond', Georgia, serif;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
 
             /* Type Scale */
-            --text-h1: 3.5rem;
+            --text-h1: 4rem;
             --text-h2: 2.75rem;
-            --text-h3: 2.125rem;
-            --text-h4: 1.625rem;
-            --text-large: 1.25rem;
+            --text-h3: 2rem;
+            --text-h4: 1.5rem;
+            --text-large: 1.15rem;
             --text-base: 1rem;
             --text-small: 0.875rem;
 
-            /* Colors - Warm Gray + Earth Tones */
-            --color-white: #FAFAF9;
-            --color-gray-50: #F5F5F4;
-            --color-gray-100: #E7E5E4;
-            --color-gray-200: #D6D3D1;
-            --color-gray-500: #78716C;
-            --color-gray-700: #44403C;
-            --color-gray-900: #1C1917;
-            --color-accent-moss: #5F6F52;
-            --color-accent-sage: #7A8A7E;
+            /* ── Concrete Tone Palette ── */
+            --color-bg:           #F3F2F0;   /* warm light concrete */
+            --color-bg-alt:       #EAEAE6;   /* slightly cooler concrete */
+            --color-card:         #F9F8F7;   /* near-white with warmth */
+            --color-border:       #D5D2CF;   /* concrete border */
+            --color-border-light: #E2E0DD;   /* lighter divider */
 
-            /* Shadows - Layered & Refined */
-            --shadow-sm: 0 1px 2px 0 rgba(28, 25, 23, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.08), 0 2px 4px -1px rgba(28, 25, 23, 0.04);
-            --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.1), 0 4px 6px -2px rgba(28, 25, 23, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(28, 25, 23, 0.12), 0 10px 10px -5px rgba(28, 25, 23, 0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(28, 25, 23, 0.25);
-            --shadow-hover: 0 20px 40px -10px rgba(28, 25, 23, 0.15), 0 10px 20px -5px rgba(28, 25, 23, 0.08);
+            --color-text-primary:   #242220;  /* near-black, warm */
+            --color-text-secondary: #5A5754;  /* medium concrete gray */
+            --color-text-muted:     #8E8A87;  /* light concrete */
+
+            --color-accent:       #7C7673;   /* warm architectural gray */
+            --color-accent-light: #A6A2A0;   /* lighter accent */
+            --color-accent-dark:  #524F4D;   /* deep concrete */
+            --color-accent-gold:  #B0A598;   /* warm travertine */
+
+            /* Shadows */
+            --shadow-sm:    0 1px 2px 0 rgba(36, 34, 32, 0.05);
+            --shadow-md:    0 4px 12px -1px rgba(36, 34, 32, 0.09), 0 2px 4px -1px rgba(36, 34, 32, 0.04);
+            --shadow-lg:    0 10px 24px -3px rgba(36, 34, 32, 0.10), 0 4px 8px -2px rgba(36, 34, 32, 0.05);
+            --shadow-xl:    0 20px 40px -5px rgba(36, 34, 32, 0.12), 0 8px 16px -5px rgba(36, 34, 32, 0.06);
+            --shadow-2xl:   0 25px 50px -12px rgba(36, 34, 32, 0.30);
+            --shadow-hover: 0 20px 40px -10px rgba(36, 34, 32, 0.16), 0 8px 20px -5px rgba(36, 34, 32, 0.08);
 
             /* Spacing (8px base) */
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-5: 1.5rem;
-            --space-6: 2rem;
-            --space-8: 3rem;
+            --space-2:  0.5rem;
+            --space-3:  0.75rem;
+            --space-4:  1rem;
+            --space-5:  1.5rem;
+            --space-6:  2rem;
+            --space-8:  3rem;
             --space-10: 4rem;
             --space-12: 6rem;
             --space-16: 8rem;
 
-            /* Animation Timing */
+            /* Animation */
             --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-            --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --duration-fast: 150ms;
+            --ease-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-fast:   150ms;
             --duration-normal: 300ms;
-            --duration-slow: 500ms;
+            --duration-slow:   500ms;
             --duration-slower: 700ms;
+
+            /* Layout */
+            --navbar-h: 68px;
+            --bottom-nav-h: 64px;
         }
 
-        /* Mobile adjustments */
         @media (max-width: 640px) {
             :root {
-                --text-h1: 2.5rem;
+                --text-h1: 2.6rem;
                 --text-h2: 2rem;
-                --text-h3: 1.625rem;
+                --text-h3: 1.6rem;
             }
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: var(--font-sans);
-            background-color: var(--color-white);
-            color: var(--color-gray-900);
-            line-height: 1.6;
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            line-height: 1.65;
         }
 
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 768px) {
+            body { padding-bottom: var(--bottom-nav-h); }
         }
 
-        /* Navigation Bar */
-        nav {
+        /* ── Decorative Side Borders ── */
+        body::before,
+        body::after {
+            content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(28, 25, 23, 0.95);
-            backdrop-filter: blur(12px);
+            top: 0; bottom: 0;
+            width: 5px;
+            z-index: 9998;
+            background: linear-gradient(
+                180deg,
+                var(--color-accent-dark)  0%,
+                var(--color-accent)       35%,
+                var(--color-accent-light) 65%,
+                var(--color-accent)       85%,
+                var(--color-accent-dark)  100%
+            );
+            opacity: 0.22;
+            pointer-events: none;
+        }
+        body::before { left: 0; }
+        body::after  { right: 0; }
+
+        @media (max-width: 768px) {
+            body::before, body::after { width: 3px; }
+        }
+
+        /* ══════════════════════════════════════
+           TOP NAVIGATION
+        ══════════════════════════════════════ */
+        #navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--navbar-h);
+            background: rgba(243, 242, 240, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             z-index: 1000;
-            padding: 1rem 2rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(95, 111, 82, 0.3);
-            transition: all var(--duration-normal) var(--ease-smooth);
+            border-bottom: 1px solid rgba(124, 118, 115, 0.18);
+            transition: background var(--duration-normal) var(--ease-smooth),
+                        box-shadow var(--duration-normal) var(--ease-smooth);
         }
 
-        nav.scrolled {
-            padding: 0.75rem 2rem;
-            background: rgba(28, 25, 23, 0.98);
+        #navbar.scrolled {
+            background: rgba(243, 242, 240, 0.97);
+            box-shadow: 0 2px 24px rgba(36, 34, 32, 0.09);
         }
 
         .nav-logo {
-            height: 40px;
-            width: 40px;
+            height: 38px;
+            width: 38px;
             object-fit: contain;
-            opacity: 0.9;
+            opacity: 0.82;
             transition: opacity var(--duration-normal) var(--ease-smooth);
+            flex-shrink: 0;
         }
+        .nav-logo:hover { opacity: 1; }
 
-        .nav-logo:hover {
-            opacity: 1;
-        }
-
+        /* Desktop nav links */
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
-            margin: 0;
-            padding: 0;
             align-items: center;
         }
 
         .nav-links a {
-            color: var(--color-gray-100);
+            color: var(--color-text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
             font-weight: 400;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
             transition: color var(--duration-normal) var(--ease-smooth);
             position: relative;
         }
@@ -143,198 +181,193 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--color-accent-moss);
+            bottom: -5px; left: 0;
+            width: 0; height: 1px;
+            background: var(--color-accent);
             transition: width var(--duration-normal) var(--ease-smooth);
         }
 
-        .nav-links a:hover {
-            color: var(--color-white);
-        }
+        .nav-links a:hover { color: var(--color-text-primary); }
+        .nav-links a:hover::after { width: 100%; }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
+        /* Credits — desktop only */
         .nav-credits {
-            font-size: 0.75rem;
-            color: var(--color-gray-500);
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+            text-align: right;
+            max-width: 260px;
+            flex-shrink: 0;
             display: none;
         }
 
         @media (min-width: 1024px) {
-            .nav-credits {
-                display: block;
-                max-width: 300px;
-                text-align: right;
-                line-height: 1.4;
-            }
+            .nav-credits { display: block; }
         }
 
-        /* Mobile Menu Toggle */
+        /* Hamburger — tablet range only (769–1023px) */
         .nav-toggle {
             display: none;
             background: none;
             border: none;
-            color: var(--color-white);
-            font-size: 1.5rem;
             cursor: pointer;
+            padding: 6px;
+            color: var(--color-text-secondary);
+            transition: color var(--duration-fast) var(--ease-smooth);
         }
+        .nav-toggle svg {
+            display: block;
+            width: 22px; height: 22px;
+        }
+        .nav-toggle:hover { color: var(--color-text-primary); }
 
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
+        @media (min-width: 769px) and (max-width: 1023px) {
+            .nav-toggle { display: block; }
 
             .nav-links {
+                display: none;
                 position: fixed;
-                top: 72px;
-                left: 0;
-                right: 0;
-                background: rgba(28, 25, 23, 0.98);
+                top: var(--navbar-h);
+                left: 0; right: 0;
+                background: rgba(243, 242, 240, 0.98);
+                backdrop-filter: blur(14px);
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: transform var(--duration-normal) var(--ease-smooth),
-                            opacity var(--duration-normal) var(--ease-smooth);
-                pointer-events: none;
+                align-items: flex-start;
+                padding: 1.5rem 2rem;
+                gap: 1.25rem;
+                border-bottom: 1px solid var(--color-border);
+                box-shadow: var(--shadow-lg);
             }
 
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: all;
-            }
+            .nav-links.active { display: flex; }
         }
 
-        /* Decorative Side Borders */
-        body::before,
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 8px;
-            z-index: 9998;
-            background: linear-gradient(180deg, var(--color-accent-moss), var(--color-accent-sage), var(--color-accent-moss));
-            opacity: 0.3;
+        /* Mobile — bottom nav handles navigation, hide links */
+        @media (max-width: 768px) {
+            .nav-links  { display: none !important; }
+            .nav-toggle { display: none !important; }
         }
 
-        body::before {
-            left: 0;
+        /* ══════════════════════════════════════
+           PAGE-SECTION SYSTEM
+        ══════════════════════════════════════ */
+        .page-section { display: block; }
+
+        @media (max-width: 768px) {
+            .page-section          { display: none; }
+            .page-section.active   { display: block; }
         }
 
-        body::after {
-            right: 0;
-        }
-
-        /* Hero Header */
+        /* ══════════════════════════════════════
+           HERO HEADER
+        ══════════════════════════════════════ */
         header {
             text-align: center;
-            padding: 12rem 2rem 8rem;
+            padding: 10rem 2rem 7rem;
             position: relative;
             overflow: hidden;
-            min-height: 70vh;
+            min-height: 68vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 72px;
+            margin-top: var(--navbar-h);
+            background-color: var(--color-bg);
         }
 
-        /* Background Image with Overlay */
+        /* Background render */
         header::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            inset: 0;
             background-image: url("public/images/renders/Render_FINAISScene%201_2.webp");
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.15;
+            opacity: 0.11;
             z-index: 0;
         }
 
-        /* Gradient Overlay */
+        /* Gradient veil */
         header::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg,
-                rgba(250, 250, 249, 0.95) 0%,
-                rgba(250, 250, 249, 0.85) 50%,
-                rgba(250, 250, 249, 0.95) 100%);
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(243, 242, 240, 0.94) 0%,
+                rgba(243, 242, 240, 0.80) 50%,
+                rgba(243, 242, 240, 0.94) 100%
+            );
             z-index: 1;
         }
 
         .header-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 860px;
             margin: 0 auto;
+        }
+
+        .header-eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.30em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.75rem;
         }
 
         header h1 {
             font-family: var(--font-serif);
-            font-size: 4rem;
+            font-size: var(--text-h1);
             font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: 0.15em;
-            color: var(--color-gray-900);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            letter-spacing: 0.22em;
+            color: var(--color-text-primary);
+            line-height: 1.1;
+        }
+
+        .header-accent {
+            width: 70px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+            margin: 2.25rem auto;
         }
 
         header .subtitle {
             font-family: var(--font-sans);
-            font-size: var(--text-large);
-            color: var(--color-gray-700);
-            font-weight: 400;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.07em;
+            margin-bottom: 0.4rem;
         }
 
         header .location {
             font-family: var(--font-sans);
-            font-size: var(--text-base);
-            color: var(--color-gray-500);
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
             font-weight: 300;
-            letter-spacing: 0.025em;
-        }
-
-        /* Accent Line */
-        .header-accent {
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--color-accent-moss), transparent);
-            margin: 2rem auto;
+            letter-spacing: 0.04em;
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 8rem 1.5rem 5rem;
-                min-height: 60vh;
+                padding: 6.5rem 1.5rem 5rem;
+                min-height: calc(100vh - var(--navbar-h) - var(--bottom-nav-h));
+                margin-top: var(--navbar-h);
             }
-
-            header h1 {
-                font-size: 2.5rem;
-                letter-spacing: 0.1em;
-            }
-
-            body::before,
-            body::after {
-                width: 4px;
-            }
+            header h1 { letter-spacing: 0.15em; }
         }
 
-        /* Project Introduction Section */
+        /* ══════════════════════════════════════
+           PROJECT INTRO
+        ══════════════════════════════════════ */
         .project-intro {
-            max-width: 800px;
+            max-width: 840px;
             margin: 0 auto;
-            padding: var(--space-16) var(--space-6);
+            padding: var(--space-16) var(--space-6) var(--space-12);
             text-align: center;
         }
 
@@ -342,111 +375,127 @@
             font-family: var(--font-serif);
             font-size: var(--text-h2);
             font-weight: 400;
+            letter-spacing: 0.06em;
+            color: var(--color-text-primary);
             margin-bottom: var(--space-8);
-            letter-spacing: 0.05em;
             position: relative;
             display: inline-block;
         }
 
-        /* Elegant underline accent */
         .intro-container h2::after {
             content: '';
             position: absolute;
-            bottom: -12px;
-            left: 50%;
+            bottom: -14px; left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--color-accent-moss), transparent);
+            width: 44px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
         }
 
         .intro-container p {
-            font-size: var(--text-large);
-            line-height: 1.75;
-            color: var(--color-gray-700);
-            margin-bottom: var(--space-6);
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-5);
             text-align: left;
+            font-weight: 300;
         }
 
         .intro-container p:first-of-type {
-            color: var(--color-gray-900);
+            color: var(--color-text-primary);
             font-weight: 400;
         }
 
-        /* Species and Plans Section */
-        .species-and-plans {
-            background-color: var(--color-gray-50);
-            padding: var(--space-16) var(--space-6);
+        /* ══════════════════════════════════════
+           SECTION HEADER (shared)
+        ══════════════════════════════════════ */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-10);
         }
 
-        .species-and-plans h2,
-        .species-and-plans h3 {
+        .section-header h2 {
             font-family: var(--font-serif);
             font-size: var(--text-h2);
             font-weight: 400;
-            margin-bottom: var(--space-10);
-            text-align: center;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.07em;
+            color: var(--color-text-primary);
+            margin-bottom: 1.25rem;
         }
 
-        .species-and-plans h3 {
-            font-size: var(--text-h3);
-            margin-top: var(--space-16);
+        .section-divider {
+            width: 44px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+            margin: 0 auto;
+        }
+
+        /* ══════════════════════════════════════
+           SPECIES SECTION
+        ══════════════════════════════════════ */
+        .species-section {
+            background-color: var(--color-bg-alt);
+            padding: var(--space-16) var(--space-6);
         }
 
         .species-grid {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: var(--space-8);
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+        }
+
+        @media (min-width: 600px) {
+            .species-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .species-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1440px) {
+            .species-grid { gap: var(--space-8); }
         }
 
         .species-card {
-            background-color: var(--color-white);
-            border-radius: 12px;
+            background-color: var(--color-card);
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-gray-100);
-            transition: transform var(--duration-normal) var(--ease-expo),
-                        box-shadow var(--duration-normal) var(--ease-expo),
-                        border-color var(--duration-normal) var(--ease-expo);
+            border: 1px solid var(--color-border-light);
+            transition:
+                transform      var(--duration-normal) var(--ease-expo),
+                box-shadow     var(--duration-normal) var(--ease-expo),
+                border-color   var(--duration-normal) var(--ease-expo);
             cursor: pointer;
-            position: relative;
         }
 
         .species-card:hover {
             transform: translateY(-8px) scale(1.01);
             box-shadow: var(--shadow-hover);
-            border-color: var(--color-accent-sage);
+            border-color: var(--color-accent-light);
         }
 
         .species-image {
             width: 100%;
-            height: 280px;
+            height: 260px;
             object-fit: cover;
+            display: block;
             transition: transform var(--duration-slow) var(--ease-expo);
         }
 
-        .species-card:hover .species-image {
-            transform: scale(1.05);
-        }
+        .species-card:hover .species-image { transform: scale(1.06); }
 
         .species-info {
-            padding: var(--space-6);
-            background: var(--color-white);
+            padding: var(--space-5);
             position: relative;
         }
 
-        /* Subtle accent line */
         .species-info::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: var(--space-6);
-            right: var(--space-6);
+            top: 0; left: var(--space-5); right: var(--space-5);
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--color-accent-sage), transparent);
+            background: linear-gradient(90deg, transparent, var(--color-border), transparent);
         }
 
         .species-name {
@@ -454,150 +503,115 @@
             font-size: var(--text-h4);
             font-weight: 500;
             margin-top: var(--space-2);
-            margin-bottom: 0.25rem;
-            color: var(--color-gray-900);
+            margin-bottom: 0.2rem;
+            color: var(--color-text-primary);
+            letter-spacing: 0.02em;
         }
 
         .species-scientific {
             font-family: var(--font-sans);
-            font-size: 0.95rem;
-            color: var(--color-gray-500);
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
             font-style: italic;
             margin-bottom: var(--space-3);
             font-weight: 300;
         }
 
         .species-description {
-            font-size: 0.9rem;
-            color: var(--color-gray-700);
-            margin-top: 8px;
-            line-height: 1.6;
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            line-height: 1.65;
+            font-weight: 300;
         }
 
-        /* Gallery Section */
-        .gallery {
-            max-width: 1400px;
-            margin: 0 auto;
+        /* Stagger */
+        .species-card:nth-child(3n+1) { transition-delay: 0ms; }
+        .species-card:nth-child(3n+2) { transition-delay: 60ms; }
+        .species-card:nth-child(3n+3) { transition-delay: 120ms; }
+
+        /* ══════════════════════════════════════
+           FLOOR PLANS SECTION
+        ══════════════════════════════════════ */
+        .plans-section {
+            background-color: var(--color-bg);
             padding: var(--space-16) var(--space-6);
         }
 
-        .gallery h2 {
-            font-family: var(--font-serif);
-            font-size: var(--text-h2);
-            font-weight: 400;
-            margin-bottom: var(--space-10);
-            text-align: center;
-            letter-spacing: 0.05em;
+        .plans-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+        }
+
+        @media (min-width: 768px) {
+            .plans-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ══════════════════════════════════════
+           GALLERY — 3D RENDERS
+        ══════════════════════════════════════ */
+        .gallery-section {
+            background-color: var(--color-bg-alt);
+            padding: var(--space-16) var(--space-6);
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: var(--space-5);
             max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-5);
+        }
+
+        @media (min-width: 600px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1440px) {
+            .gallery-grid { gap: var(--space-6); }
         }
 
         .gallery-item {
             position: relative;
             cursor: zoom-in;
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-gray-100);
-            transition: transform var(--duration-normal) var(--ease-smooth),
-                        box-shadow var(--duration-normal) var(--ease-smooth);
+            border: 1px solid var(--color-border-light);
+            transition:
+                transform  var(--duration-normal) var(--ease-smooth),
+                box-shadow var(--duration-normal) var(--ease-smooth);
         }
 
         .gallery-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.025);
             box-shadow: var(--shadow-xl);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 280px;
+            height: 260px;
             object-fit: cover;
             display: block;
+            transition: transform var(--duration-slow) var(--ease-expo);
         }
 
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(28, 25, 23, 0.96);
-            backdrop-filter: blur(8px);
-            cursor: zoom-out;
-        }
+        .gallery-item:hover img { transform: scale(1.05); }
 
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: var(--shadow-2xl);
-            border-radius: 4px;
-            animation: lightboxZoom var(--duration-normal) var(--ease-expo);
-        }
-
-        @keyframes lightboxZoom {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px; right: 40px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 10000;
-            transition: all var(--duration-fast) var(--ease-smooth);
-            background: rgba(255, 255, 255, 0.1);
-            width: 48px; height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-        }
-
-        .lightbox-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
-        }
-
-        .lightbox-caption {
-            position: absolute;
-            bottom: 20px; left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            font-size: 1.1rem;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 4px;
-        }
-
+        /* ══════════════════════════════════════
+           FOOTER
+        ══════════════════════════════════════ */
         footer {
             text-align: center;
             padding: var(--space-12) var(--space-6) var(--space-10);
-            background: linear-gradient(180deg, var(--color-gray-900) 0%, #0F0E0D 100%);
-            color: var(--color-gray-200);
-            font-size: 0.9rem;
+            background: linear-gradient(180deg, var(--color-text-primary) 0%, #131211 100%);
+            color: var(--color-bg);
             position: relative;
             overflow: hidden;
         }
@@ -607,54 +621,187 @@
             position: absolute;
             top: 0; left: 0; right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--color-accent-moss), transparent);
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
         }
 
         footer p {
-            color: var(--color-gray-200);
+            color: rgba(243, 242, 240, 0.65);
             margin-bottom: var(--space-3);
             font-weight: 300;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
         }
 
         footer p:last-child {
             font-size: var(--text-small);
-            color: var(--color-gray-500);
+            color: rgba(243, 242, 240, 0.35);
         }
 
-        /* Responsive breakpoints */
-        @media (min-width: 768px) {
-            .species-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-8);
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-6);
-            }
+        /* ══════════════════════════════════════
+           LIGHTBOX
+        ══════════════════════════════════════ */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background-color: rgba(36, 34, 32, 0.96);
+            backdrop-filter: blur(10px);
+            cursor: zoom-out;
         }
 
-        @media (min-width: 1024px) {
-            .species-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .lightbox-content {
+            display: block;
+            max-width: 90vw;
+            max-height: 90vh;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: var(--shadow-2xl);
+            border-radius: 4px;
+            animation: lightboxZoom var(--duration-normal) var(--ease-expo) both;
         }
 
-        @media (min-width: 1440px) {
-            .species-grid,
-            .gallery-grid {
-                gap: var(--space-10);
-            }
+        @keyframes lightboxZoom {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+            to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         }
 
-        /* Fade-in animations */
+        .lightbox-close {
+            position: absolute;
+            top: 20px; right: 28px;
+            color: rgba(243, 242, 240, 0.9);
+            font-size: 1.75rem;
+            cursor: pointer;
+            z-index: 10000;
+            background: rgba(243, 242, 240, 0.10);
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                background  var(--duration-fast) var(--ease-smooth),
+                transform   var(--duration-fast) var(--ease-smooth);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(243, 242, 240, 0.22);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px; left: 50%;
+            transform: translateX(-50%);
+            color: rgba(243, 242, 240, 0.88);
+            font-size: 0.85rem;
+            text-align: center;
+            background: rgba(36, 34, 32, 0.72);
+            padding: 8px 20px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            font-weight: 300;
+        }
+
+        /* ══════════════════════════════════════
+           SCROLL PROGRESS BAR
+        ══════════════════════════════════════ */
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                var(--color-accent-dark),
+                var(--color-accent),
+                var(--color-accent-gold));
+            z-index: 9999;
+            transition: width 0.1s linear;
+            pointer-events: none;
+        }
+
+        /* ══════════════════════════════════════
+           BOTTOM NAVIGATION — MOBILE
+        ══════════════════════════════════════ */
+        #bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            height: var(--bottom-nav-h);
+            background: rgba(249, 248, 247, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(124, 118, 115, 0.20);
+            z-index: 1001;
+            align-items: stretch;
+            box-shadow: 0 -4px 24px rgba(36, 34, 32, 0.09);
+        }
+
+        @media (max-width: 768px) {
+            #bottom-nav { display: flex; }
+        }
+
+        .bottom-nav-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--color-text-muted);
+            font-size: 0.58rem;
+            font-family: var(--font-sans);
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 8px 4px;
+            transition: color var(--duration-normal) var(--ease-smooth);
+            position: relative;
+        }
+
+        .bottom-nav-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 0; height: 2px;
+            background: var(--color-accent);
+            border-radius: 0 0 3px 3px;
+            transition: width var(--duration-normal) var(--ease-expo);
+        }
+
+        .bottom-nav-btn.active {
+            color: var(--color-accent-dark);
+        }
+
+        .bottom-nav-btn.active::after {
+            width: 28px;
+        }
+
+        .bottom-nav-btn svg {
+            width: 21px; height: 21px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke var(--duration-normal) var(--ease-smooth);
+        }
+
+        /* ══════════════════════════════════════
+           FADE-IN ANIMATIONS
+        ══════════════════════════════════════ */
         .fade-in-element {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity var(--duration-slower) var(--ease-expo),
-                        transform var(--duration-slower) var(--ease-expo);
+            transform: translateY(22px);
+            transition:
+                opacity   var(--duration-slower) var(--ease-expo),
+                transform var(--duration-slower) var(--ease-expo);
         }
 
         .fade-in-element.is-visible {
@@ -662,26 +809,6 @@
             transform: translateY(0);
         }
 
-        /* Stagger delays for cards */
-        .species-card:nth-child(1) { transition-delay: 0ms; }
-        .species-card:nth-child(2) { transition-delay: 100ms; }
-        .species-card:nth-child(3) { transition-delay: 200ms; }
-        .species-card:nth-child(4) { transition-delay: 300ms; }
-        .species-card:nth-child(5) { transition-delay: 400ms; }
-        .species-card:nth-child(6) { transition-delay: 500ms; }
-
-        /* Scroll progress bar */
-        .scroll-progress {
-            position: fixed;
-            top: 0; left: 0;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--color-accent-moss), var(--color-accent-sage));
-            z-index: 9999;
-            transition: width 0.1s linear;
-        }
-
-        /* Reduced motion support */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -692,481 +819,638 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ═══════════════════════════════════════
+         TOP NAVIGATION
+    ════════════════════════════════════════ -->
     <nav id="navbar">
         <img src="logo_tanus_saab.png" alt="Tanus Saab Paisagismo" class="nav-logo">
 
-        <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <line x1="3" y1="7.5" x2="21" y2="7.5"/>
+                <line x1="3" y1="16.5" x2="21" y2="16.5"/>
+            </svg>
+        </button>
 
         <ul class="nav-links" id="navLinks">
-            <li><a href="#especies">Espécies</a></li>
-            <li><a href="#plantas-baixas">Plantas Baixas 2D</a></li>
-            <li><a href="#visualizacoes">Visualizações 3D</a></li>
+            <li><a href="#page-especies"  onclick="return handleNavLink('especies')">Espécies</a></li>
+            <li><a href="#page-plantas"   onclick="return handleNavLink('plantas')">Plantas 2D</a></li>
+            <li><a href="#page-renders"   onclick="return handleNavLink('renders')">Visualizações 3D</a></li>
         </ul>
 
         <div class="nav-credits">
-            Tanus Saab & Gustavo Valencio | 3D: Lucas Nakamura
+            Tanus Saab &amp; Gustavo Valencio<br>
+            3D: Lucas Nakamura
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <header>
-        <div class="header-content">
-            <h1>CASA EVA</h1>
-            <div class="header-accent"></div>
-            <p class="subtitle">Projeto de Paisagismo Residencial</p>
-            <p class="location">Praia do Estaleiro, Balneário Camboriú - SC</p>
-        </div>
-    </header>
+    <!-- ═══════════════════════════════════════
+         PAGE 1 — INÍCIO
+    ════════════════════════════════════════ -->
+    <div class="page-section active" id="page-inicio">
 
-    <!-- Project Introduction -->
-    <section class="project-intro">
-        <div class="intro-container">
-            <h2>Sobre o Projeto</h2>
-            <p>
-                Casa EVA é um projeto de paisagismo residencial desenvolvido para a
-                Praia do Estaleiro, em Balneário Camboriú, Santa Catarina. O projeto
-                harmoniza espécies nativas brasileiras com design contemporâneo,
-                criando um jardim tropical que valoriza a biodiversidade local e
-                proporciona um ambiente sustentável e acolhedor.
-            </p>
-            <p>
-                Com foco em plantas nativas e adaptadas ao clima litorâneo, o paisagismo
-                integra funcionalidade e estética, oferecendo áreas de convivência,
-                contemplação e conexão com a natureza.
-            </p>
-        </div>
-    </section>
+        <!-- Hero -->
+        <header>
+            <div class="header-content">
+                <div class="header-eyebrow">Projeto de Paisagismo Residencial</div>
+                <h1>CASA EVA</h1>
+                <div class="header-accent"></div>
+                <p class="subtitle">Praia do Estaleiro, Balneário Camboriú — SC</p>
+            </div>
+        </header>
 
-    <!-- Species and Floor Plans -->
-    <section class="species-and-plans" id="especies">
-        <h2>Espécies Selecionadas</h2>
+        <!-- Introduction -->
+        <section class="project-intro">
+            <div class="intro-container">
+                <h2>Sobre o Projeto</h2>
+                <p>
+                    Casa EVA é um projeto de paisagismo residencial desenvolvido para a
+                    Praia do Estaleiro, em Balneário Camboriú, Santa Catarina. O projeto
+                    harmoniza espécies nativas brasileiras com design contemporâneo,
+                    criando um jardim tropical que valoriza a biodiversidade local e
+                    proporciona um ambiente sustentável e acolhedor.
+                </p>
+                <p>
+                    Com foco em plantas nativas e adaptadas ao clima litorâneo, o paisagismo
+                    integra funcionalidade e estética, oferecendo áreas de convivência,
+                    contemplação e conexão com a natureza.
+                </p>
+            </div>
+        </section>
 
-        <div class="species-grid">
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/Arvore_tatare.webp" data-full="public/images/species/Arvore_tatare.webp" alt="Tataré" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Tataré</div>
-                    <div class="species-scientific">Chloroleucon tortum</div>
-                    <div class="species-description">Árvore escultural de tronco tortuoso e marmorizado, nativa da Mata Atlântica. Suas flores são pequenos pompons perfumados que atraem abelhas.</div>
+    </div><!-- /page-inicio -->
+
+    <!-- ═══════════════════════════════════════
+         PAGE 2 — ESPÉCIES
+    ════════════════════════════════════════ -->
+    <div class="page-section" id="page-especies">
+
+        <section class="species-section">
+            <div class="section-header">
+                <h2>Espécies Selecionadas</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="species-grid">
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/Arvore_tatare.webp"
+                         data-full="public/images/species/Arvore_tatare.webp"
+                         alt="Tataré" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Tataré</div>
+                        <div class="species-scientific">Chloroleucon tortum</div>
+                        <div class="species-description">Árvore escultural de tronco tortuoso e marmorizado, nativa da Mata Atlântica. Suas flores são pequenos pompons perfumados que atraem abelhas.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/arvore_jabuticabeira.webp"
+                         data-full="public/images/species/arvore_jabuticabeira.webp"
+                         alt="Jabuticabeira" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Jabuticabeira</div>
+                        <div class="species-scientific">Plinia cauliflora</div>
+                        <div class="species-description">Frutífera nativa brasileira icônica, com frutos que crescem diretamente no tronco. Altamente ornamental em todas as fases.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/Jasmim-manga-–-Plumeria-rubra.webp"
+                         data-full="public/images/species/Jasmim-manga-–-Plumeria-rubra.webp"
+                         alt="Jasmim Manga" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Jasmim Manga</div>
+                        <div class="species-scientific">Plumeria rubra</div>
+                        <div class="species-description">Árvore de pequeno porte com flores extremamente perfumadas e galhos esculturais. Ideal para pontos de destaque no jardim.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/arvore_acacia_de_seyal.webp"
+                         data-full="public/images/species/arvore_acacia_de_seyal.webp"
+                         alt="Acácia de Seyal" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Acácia de Seyal</div>
+                        <div class="species-scientific">Vachellia seyal</div>
+                        <div class="species-description">Conhecida como acácia do deserto, possui tronco avermelhado e floração amarela intensa em pompons. Muito resistente ao sol.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/coccoloba_uvifera_arvore.webp"
+                         data-full="public/images/species/coccoloba_uvifera_arvore.webp"
+                         alt="Uva da Praia" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Coccoloba (Uva da Praia)</div>
+                        <div class="species-scientific">Coccoloba uvifera</div>
+                        <div class="species-description">Arbusto ou árvore de folhas grandes e arredondadas, extremamente resistente à salinidade e ventos litorâneos.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/geniparana_arvore_gustavia_augusta.webp"
+                         data-full="public/images/species/geniparana_arvore_gustavia_augusta.webp"
+                         alt="Augusta" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Augusta (Geniparana)</div>
+                        <div class="species-scientific">Gustavia augusta</div>
+                        <div class="species-description">Arbusto nativo com flores brancas e rosadas muito exuberantes e grandes, que lembram a flor do maracujá.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/palmeira_elegance.webp"
+                         data-full="public/images/species/palmeira_elegance.webp"
+                         alt="Palmeira Elegance" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Palmeira Elegance</div>
+                        <div class="species-scientific">Chamaedorea elegans</div>
+                        <div class="species-description">Palmeira de pequeno porte e crescimento lento, ideal para áreas de meia-sombra ou vasos em ambientes internos.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/palmeira_areca_bambu.webp"
+                         data-full="public/images/species/palmeira_areca_bambu.webp"
+                         alt="Areca Bambu" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Areca Bambu</div>
+                        <div class="species-scientific">Dypsis lutescens</div>
+                        <div class="species-description">Uma das palmeiras mais populares, forma touceiras densas com caules amarelados, excelente para privacidade e volume verde.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/palmeira_chameodora.webp"
+                         data-full="public/images/species/palmeira_chameodora.webp"
+                         alt="Chameodora" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Chameodora</div>
+                        <div class="species-scientific">Chamaedorea seifrizii</div>
+                        <div class="species-description">Palmeira compacta com caules que lembram bambu. Prefere ambientes sombreados e traz um ar tropical refinado.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/zamia_zamia_furfuracea_folhagem.webp"
+                         data-full="public/images/species/zamia_zamia_furfuracea_folhagem.webp"
+                         alt="Zamia" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Zamia</div>
+                        <div class="species-scientific">Zamia furfuracea</div>
+                        <div class="species-description">Planta de aspecto pré-histórico com folhas rígidas e aveludadas. Muito rústica, resistente à seca e de baixa manutenção.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/palmeira_jeriva_syagrus_romanzoffiana.webp"
+                         data-full="public/images/species/palmeira_jeriva_syagrus_romanzoffiana.webp"
+                         alt="Palmeira Jerivá" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Palmeira Jerivá</div>
+                        <div class="species-scientific">Syagrus romanzoffiana</div>
+                        <div class="species-description">Palmeira nativa imponente, com tronco cinza e folhas longas que balançam elegantemente com o vento. Atrai pássaros.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/Monstera Deliciosa (Costela de Adão).webp"
+                         data-full="public/images/species/Monstera Deliciosa (Costela de Adão).webp"
+                         alt="Monstera Deliciosa" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Monstera (Costela de Adão)</div>
+                        <div class="species-scientific">Monstera deliciosa</div>
+                        <div class="species-description">A famosa Costela de Adão, com folhas gigantes e fenestras naturais. Traz uma textura tropical inconfundível.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/Orelha de Elefante.webp"
+                         data-full="public/images/species/Orelha de Elefante.webp"
+                         alt="Orelha de Elefante" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Orelha de Elefante</div>
+                        <div class="species-scientific">Alocasia macrorrhizos</div>
+                        <div class="species-description">Planta de folhagem exuberante com folhas em formato de coração que podem atingir grandes dimensões.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/Samambaia.webp"
+                         data-full="public/images/species/Samambaia.webp"
+                         alt="Samambaia" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Samambaia</div>
+                        <div class="species-scientific">Nephrolepis exaltata</div>
+                        <div class="species-description">Clássica e atemporal, cria volumes pendentes de textura delicada e verde intenso. Ideal para áreas úmidas e sombreadas.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/Guaimbe_Philodendron_bipinnatifidum​.webp"
+                         data-full="public/images/species/Guaimbe_Philodendron_bipinnatifidum​.webp"
+                         alt="Philodendro" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Guaimbê (Philodendron)</div>
+                        <div class="species-scientific">Philodendron bipinnatifidum</div>
+                        <div class="species-description">Nativo brasileiro com folhas profundamente recortadas e brilhantes. Muito robusto e de rápido crescimento.</div>
+                    </div>
+                </div>
+
+                <div class="species-card" onclick="openLightbox(this)">
+                    <img src="public/images/species/thumbs/Curculigo-capitulata-01.webp"
+                         data-full="public/images/species/Curculigo-capitulata-01.webp"
+                         alt="Curculigo" class="species-image" loading="lazy" decoding="async">
+                    <div class="species-info">
+                        <div class="species-name">Curculigo (Capim-palmeira)</div>
+                        <div class="species-scientific">Molineria capitulata</div>
+                        <div class="species-description">Folhagem plissada que lembra palmeiras jovens, excelente para forração de grandes áreas sob sombra.</div>
+                    </div>
+                </div>
+
+            </div><!-- /species-grid -->
+        </section>
+
+    </div><!-- /page-especies -->
+
+    <!-- ═══════════════════════════════════════
+         PAGE 3 — PLANTAS BAIXAS 2D
+    ════════════════════════════════════════ -->
+    <div class="page-section" id="page-plantas">
+
+        <section class="plans-section">
+            <div class="section-header">
+                <h2>Plantas Baixas 2D</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="plans-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/plans/thumbs/PLANTA_TERREO.webp"
+                         data-full="public/images/plans/PLANTA_TERREO.webp"
+                         alt="Planta Térreo — Paisagismo" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/plans/thumbs/PLANTA_PRIMEIRO_PAVIMENTO.webp"
+                         data-full="public/images/plans/PLANTA_PRIMEIRO_PAVIMENTO.webp"
+                         alt="Planta Primeiro Pavimento — Paisagismo" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/plans/thumbs/PLANTA_COBERTURA.webp"
+                         data-full="public/images/plans/PLANTA_COBERTURA.webp"
+                         alt="Planta Cobertura — Paisagismo" loading="lazy" decoding="async">
                 </div>
             </div>
+        </section>
 
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/arvore_jabuticabeira.webp" data-full="public/images/species/arvore_jabuticabeira.webp" alt="Jabuticabeira" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Jabuticabeira</div>
-                    <div class="species-scientific">Plinia cauliflora</div>
-                    <div class="species-description">Frutífera nativa brasileira icônica, com frutos que crescem diretamente no tronco. Altamente ornamental em todas as fases.</div>
+    </div><!-- /page-plantas -->
+
+    <!-- ═══════════════════════════════════════
+         PAGE 4 — VISUALIZAÇÕES 3D
+    ════════════════════════════════════════ -->
+    <div class="page-section" id="page-renders">
+
+        <section class="gallery-section">
+            <div class="section-header">
+                <h2>Visualizações 3D</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Deck Views -->
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/deck-01.webp" data-full="public/images/renders/deck-01.webp" alt="Vista Deck 01" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/Jasmim-manga-–-Plumeria-rubra.webp" data-full="public/images/species/Jasmim-manga-–-Plumeria-rubra.webp" alt="Jasmim Manga" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Jasmim Manga</div>
-                    <div class="species-scientific">Plumeria rubra</div>
-                    <div class="species-description">Árvore de pequeno porte com flores extremamente perfumadas e galhos esculturais. Ideal para pontos de destaque no jardim.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/deck-02.webp" data-full="public/images/renders/deck-02.webp" alt="Vista Deck 02" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/arvore_acacia_de_seyal.webp" data-full="public/images/species/arvore_acacia_de_seyal.webp" alt="Acácia de Seyal" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Acácia de Seyal</div>
-                    <div class="species-scientific">Vachellia seyal</div>
-                    <div class="species-description">Conhecida como acácia do deserto, possui tronco avermelhado e floração amarela intensa em pompons. Muito resistente ao sol.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/deck-03.webp" data-full="public/images/renders/deck-03.webp" alt="Vista Deck 03" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/coccoloba_uvifera_arvore.webp" data-full="public/images/species/coccoloba_uvifera_arvore.webp" alt="Uva da Praia" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Coccoloba (Uva da Praia)</div>
-                    <div class="species-scientific">Coccoloba uvifera</div>
-                    <div class="species-description">Arbusto ou árvore de folhas grandes e arredondadas, extremamente resistente à salinidade e ventos litorâneos.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/deck-04.webp" data-full="public/images/renders/deck-04.webp" alt="Vista Deck 04" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/geniparana_arvore_gustavia_augusta.webp" data-full="public/images/species/geniparana_arvore_gustavia_augusta.webp" alt="Augusta" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Augusta (Geniparana)</div>
-                    <div class="species-scientific">Gustavia augusta</div>
-                    <div class="species-description">Arbusto nativo com flores brancas e rosadas muito exuberantes e grandes, que lembram a flor do maracujá.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/deck-05.webp" data-full="public/images/renders/deck-05.webp" alt="Vista Deck 05" loading="lazy" decoding="async">
                 </div>
-            </div>
 
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/palmeira_elegance.webp" data-full="public/images/species/palmeira_elegance.webp" alt="Palmeira Elegance" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Palmeira Elegance</div>
-                    <div class="species-scientific">Chamaedorea elegans</div>
-                    <div class="species-description">Palmeira de pequeno porte e crescimento lento, ideal para áreas de meia-sombra ou vasos em ambientes internos.</div>
+                <!-- Final Renders -->
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 1_2.webp" data-full="public/images/renders/Render_FINAISScene 1_2.webp" alt="Render Final — Cena 1" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/palmeira_areca_bambu.webp" data-full="public/images/species/palmeira_areca_bambu.webp" alt="Areca Bambu" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Areca Bambu</div>
-                    <div class="species-scientific">Dypsis lutescens</div>
-                    <div class="species-description">Uma das palmeiras mais populares, forma touceiras densas com caules amarelados, excelente para privacidade e volume verde.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 2_2.webp" data-full="public/images/renders/Render_FINAISScene 2_2.webp" alt="Render Final — Cena 2" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/palmeira_chameodora.webp" data-full="public/images/species/palmeira_chameodora.webp" alt="Chameodora" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Chameodora</div>
-                    <div class="species-scientific">Chamaedorea seifrizii</div>
-                    <div class="species-description">Palmeira compacta com caules que lembram bambu. Prefere ambientes sombreados e traz um ar tropical refinado.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 3_2.webp" data-full="public/images/renders/Render_FINAISScene 3_2.webp" alt="Render Final — Cena 3" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/zamia_zamia_furfuracea_folhagem.webp" data-full="public/images/species/zamia_zamia_furfuracea_folhagem.webp" alt="Zamia" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Zamia</div>
-                    <div class="species-scientific">Zamia furfuracea</div>
-                    <div class="species-description">Planta de aspecto pré-histórico com folhas rígidas e aveludadas. É muito rústica, resistente à seca e de baixa manutenção.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 4_2.webp" data-full="public/images/renders/Render_FINAISScene 4_2.webp" alt="Render Final — Cena 4" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/palmeira_jeriva_syagrus_romanzoffiana.webp" data-full="public/images/species/palmeira_jeriva_syagrus_romanzoffiana.webp" alt="Palmeira Jerivá" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Palmeira Jerivá</div>
-                    <div class="species-scientific">Syagrus romanzoffiana</div>
-                    <div class="species-description">Palmeira nativa imponente, com tronco cinza e folhas longas que balançam elegantemente com o vento. Atrai pássaros.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 5_2.webp" data-full="public/images/renders/Render_FINAISScene 5_2.webp" alt="Render Final — Cena 5" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/Monstera Deliciosa (Costela de Adão).webp" data-full="public/images/species/Monstera Deliciosa (Costela de Adão).webp" alt="Monstera Deliciosa" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Monstera Deliciosa (Costela de Adão)</div>
-                    <div class="species-scientific">Monstera deliciosa</div>
-                    <div class="species-description">A famosa Costela de Adão, com folhas gigantes e fenestras naturais. Traz uma textura tropical inconfundível.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 6_2.webp" data-full="public/images/renders/Render_FINAISScene 6_2.webp" alt="Render Final — Cena 6" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/Orelha de Elefante.webp" data-full="public/images/species/Orelha de Elefante.webp" alt="Orelha de Elefante" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Orelha de Elefante</div>
-                    <div class="species-scientific">Alocasia macrorrhizos</div>
-                    <div class="species-description">Planta de folhagem exuberante com folhas em formato de coração que podem atingir grandes dimensões.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 7_2.webp" data-full="public/images/renders/Render_FINAISScene 7_2.webp" alt="Render Final — Cena 7" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/Samambaia.webp" data-full="public/images/species/Samambaia.webp" alt="Samambaia" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Samambaia</div>
-                    <div class="species-scientific">Nephrolepis exaltata</div>
-                    <div class="species-description">Clássica e atemporal, cria volumes pendentes de textura delicada e verde intenso. Ideal para áreas mais úmidas e sombreadas.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 8_2.webp" data-full="public/images/renders/Render_FINAISScene 8_2.webp" alt="Render Final — Cena 8" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/Guaimbe_Philodendron_bipinnatifidum​.webp" data-full="public/images/species/Guaimbe_Philodendron_bipinnatifidum​.webp" alt="Philodendro" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Guaimbê (Philodendron)</div>
-                    <div class="species-scientific">Philodendron bipinnatifidum</div>
-                    <div class="species-description">Nativo brasileiro com folhas profundamente recortadas e brilhantes. Muito robusto e de rápido crescimento.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 9_2.webp" data-full="public/images/renders/Render_FINAISScene 9_2.webp" alt="Render Final — Cena 9" loading="lazy" decoding="async">
                 </div>
-            </div>
-
-            <div class="species-card" onclick="openLightbox(this)">
-                <img src="public/images/species/thumbs/Curculigo-capitulata-01.webp" data-full="public/images/species/Curculigo-capitulata-01.webp" alt="Curculigo" class="species-image" loading="lazy" decoding="async">
-                <div class="species-info">
-                    <div class="species-name">Curculigo (Capim-palmeira)</div>
-                    <div class="species-scientific">Molineria capitulata</div>
-                    <div class="species-description">Folhagem plissada que lembra palmeiras jovens, excelente para forração de grandes áreas sob sombra.</div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 10_2.webp" data-full="public/images/renders/Render_FINAISScene 10_2.webp" alt="Render Final — Cena 10" loading="lazy" decoding="async">
                 </div>
-            </div>
-        </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 11_2.webp" data-full="public/images/renders/Render_FINAISScene 11_2.webp" alt="Render Final — Cena 11" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 12_2.webp" data-full="public/images/renders/Render_FINAISScene 12_2.webp" alt="Render Final — Cena 12" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 13_2.webp" data-full="public/images/renders/Render_FINAISScene 13_2.webp" alt="Render Final — Cena 13" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 14_2.webp" data-full="public/images/renders/Render_FINAISScene 14_2.webp" alt="Render Final — Cena 14" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 15_2.webp" data-full="public/images/renders/Render_FINAISScene 15_2.webp" alt="Render Final — Cena 15" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 16_2.webp" data-full="public/images/renders/Render_FINAISScene 16_2.webp" alt="Render Final — Cena 16" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 18_2.webp" data-full="public/images/renders/Render_FINAISScene 18_2.webp" alt="Render Final — Cena 18" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 20_2.webp" data-full="public/images/renders/Render_FINAISScene 20_2.webp" alt="Render Final — Cena 20" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 21_2.webp" data-full="public/images/renders/Render_FINAISScene 21_2.webp" alt="Render Final — Cena 21" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 22_2.webp" data-full="public/images/renders/Render_FINAISScene 22_2.webp" alt="Render Final — Cena 22" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 23_2.webp" data-full="public/images/renders/Render_FINAISScene 23_2.webp" alt="Render Final — Cena 23" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 24_2.webp" data-full="public/images/renders/Render_FINAISScene 24_2.webp" alt="Render Final — Cena 24" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 25_2.webp" data-full="public/images/renders/Render_FINAISScene 25_2.webp" alt="Render Final — Cena 25" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 26_2.webp" data-full="public/images/renders/Render_FINAISScene 26_2.webp" alt="Render Final — Cena 26" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 27_1.webp" data-full="public/images/renders/Render_FINAISScene 27_1.webp" alt="Render Final — Cena 27" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 28_1.webp" data-full="public/images/renders/Render_FINAISScene 28_1.webp" alt="Render Final — Cena 28" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 29_1.webp" data-full="public/images/renders/Render_FINAISScene 29_1.webp" alt="Render Final — Cena 29" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 30_1.webp" data-full="public/images/renders/Render_FINAISScene 30_1.webp" alt="Render Final — Cena 30" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 31_1.webp" data-full="public/images/renders/Render_FINAISScene 31_1.webp" alt="Render Final — Cena 31" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 32_1.webp" data-full="public/images/renders/Render_FINAISScene 32_1.webp" alt="Render Final — Cena 32" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 33_1.webp" data-full="public/images/renders/Render_FINAISScene 33_1.webp" alt="Render Final — Cena 33" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 36_1.webp" data-full="public/images/renders/Render_FINAISScene 36_1.webp" alt="Render Final — Cena 36" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 37_1.webp" data-full="public/images/renders/Render_FINAISScene 37_1.webp" alt="Render Final — Cena 37" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 38_1.webp" data-full="public/images/renders/Render_FINAISScene 38_1.webp" alt="Render Final — Cena 38" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 39_1.webp" data-full="public/images/renders/Render_FINAISScene 39_1.webp" alt="Render Final — Cena 39" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Render_FINAISScene 40.webp" data-full="public/images/renders/Render_FINAISScene 40.webp" alt="Render Final — Cena 40" loading="lazy" decoding="async">
+                </div>
 
-        <!-- Floor Plans -->
-        <h3 id="plantas-baixas">Plantas Baixas 2D</h3>
-        <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/plans/thumbs/PLANTA_TERREO.webp" data-full="public/images/plans/PLANTA_TERREO.webp" alt="Planta Térreo - Paisagismo" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/plans/thumbs/PLANTA_PRIMEIRO_PAVIMENTO.webp" data-full="public/images/plans/PLANTA_PRIMEIRO_PAVIMENTO.webp" alt="Planta Primeiro Pavimento - Paisagismo" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/plans/thumbs/PLANTA_COBERTURA.webp" data-full="public/images/plans/PLANTA_COBERTURA.webp" alt="Planta Cobertura - Paisagismo" loading="lazy" decoding="async">
-            </div>
-        </div>
-    </section>
+                <!-- Additional Scenes -->
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Scene 2.webp" data-full="public/images/renders/Scene 2.webp" alt="Cena 2" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Scene 3.webp" data-full="public/images/renders/Scene 3.webp" alt="Cena 3" loading="lazy" decoding="async">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="public/images/renders/thumbs/Scene 4.webp" data-full="public/images/renders/Scene 4.webp" alt="Cena 4" loading="lazy" decoding="async">
+                </div>
+            </div><!-- /gallery-grid -->
+        </section>
 
-    <!-- 3D Gallery -->
-    <section class="gallery" id="visualizacoes">
-        <h2>Visualizações 3D</h2>
+        <footer>
+            <p>Projeto de Paisagismo: Tanus Saab e Gustavo Valencio &nbsp;|&nbsp; Visualizações 3D: Lucas Nakamura Cerejo</p>
+            <p>&copy; 2025 Casa EVA — Todos os direitos reservados.</p>
+        </footer>
 
-        <div class="gallery-grid">
-            <!-- Deck Views -->
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/deck-01.webp" data-full="public/images/renders/deck-01.webp" alt="Vista Deck 01" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/deck-02.webp" data-full="public/images/renders/deck-02.webp" alt="Vista Deck 02" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/deck-03.webp" data-full="public/images/renders/deck-03.webp" alt="Vista Deck 03" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/deck-04.webp" data-full="public/images/renders/deck-04.webp" alt="Vista Deck 04" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/deck-05.webp" data-full="public/images/renders/deck-05.webp" alt="Vista Deck 05" loading="lazy" decoding="async">
-            </div>
+    </div><!-- /page-renders -->
 
-            <!-- Final Renders -->
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 1_2.webp" data-full="public/images/renders/Render_FINAISScene 1_2.webp" alt="Render Final - Cena 1" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 2_2.webp" data-full="public/images/renders/Render_FINAISScene 2_2.webp" alt="Render Final - Cena 2" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 3_2.webp" data-full="public/images/renders/Render_FINAISScene 3_2.webp" alt="Render Final - Cena 3" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 4_2.webp" data-full="public/images/renders/Render_FINAISScene 4_2.webp" alt="Render Final - Cena 4" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 5_2.webp" data-full="public/images/renders/Render_FINAISScene 5_2.webp" alt="Render Final - Cena 5" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 6_2.webp" data-full="public/images/renders/Render_FINAISScene 6_2.webp" alt="Render Final - Cena 6" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 7_2.webp" data-full="public/images/renders/Render_FINAISScene 7_2.webp" alt="Render Final - Cena 7" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 8_2.webp" data-full="public/images/renders/Render_FINAISScene 8_2.webp" alt="Render Final - Cena 8" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 9_2.webp" data-full="public/images/renders/Render_FINAISScene 9_2.webp" alt="Render Final - Cena 9" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 10_2.webp" data-full="public/images/renders/Render_FINAISScene 10_2.webp" alt="Render Final - Cena 10" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 11_2.webp" data-full="public/images/renders/Render_FINAISScene 11_2.webp" alt="Render Final - Cena 11" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 12_2.webp" data-full="public/images/renders/Render_FINAISScene 12_2.webp" alt="Render Final - Cena 12" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 13_2.webp" data-full="public/images/renders/Render_FINAISScene 13_2.webp" alt="Render Final - Cena 13" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 14_2.webp" data-full="public/images/renders/Render_FINAISScene 14_2.webp" alt="Render Final - Cena 14" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 15_2.webp" data-full="public/images/renders/Render_FINAISScene 15_2.webp" alt="Render Final - Cena 15" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 16_2.webp" data-full="public/images/renders/Render_FINAISScene 16_2.webp" alt="Render Final - Cena 16" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 18_2.webp" data-full="public/images/renders/Render_FINAISScene 18_2.webp" alt="Render Final - Cena 18" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 20_2.webp" data-full="public/images/renders/Render_FINAISScene 20_2.webp" alt="Render Final - Cena 20" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 21_2.webp" data-full="public/images/renders/Render_FINAISScene 21_2.webp" alt="Render Final - Cena 21" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 22_2.webp" data-full="public/images/renders/Render_FINAISScene 22_2.webp" alt="Render Final - Cena 22" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 23_2.webp" data-full="public/images/renders/Render_FINAISScene 23_2.webp" alt="Render Final - Cena 23" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 24_2.webp" data-full="public/images/renders/Render_FINAISScene 24_2.webp" alt="Render Final - Cena 24" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 25_2.webp" data-full="public/images/renders/Render_FINAISScene 25_2.webp" alt="Render Final - Cena 25" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 26_2.webp" data-full="public/images/renders/Render_FINAISScene 26_2.webp" alt="Render Final - Cena 26" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 27_1.webp" data-full="public/images/renders/Render_FINAISScene 27_1.webp" alt="Render Final - Cena 27" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 28_1.webp" data-full="public/images/renders/Render_FINAISScene 28_1.webp" alt="Render Final - Cena 28" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 29_1.webp" data-full="public/images/renders/Render_FINAISScene 29_1.webp" alt="Render Final - Cena 29" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 30_1.webp" data-full="public/images/renders/Render_FINAISScene 30_1.webp" alt="Render Final - Cena 30" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 31_1.webp" data-full="public/images/renders/Render_FINAISScene 31_1.webp" alt="Render Final - Cena 31" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 32_1.webp" data-full="public/images/renders/Render_FINAISScene 32_1.webp" alt="Render Final - Cena 32" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 33_1.webp" data-full="public/images/renders/Render_FINAISScene 33_1.webp" alt="Render Final - Cena 33" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 36_1.webp" data-full="public/images/renders/Render_FINAISScene 36_1.webp" alt="Render Final - Cena 36" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 37_1.webp" data-full="public/images/renders/Render_FINAISScene 37_1.webp" alt="Render Final - Cena 37" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 38_1.webp" data-full="public/images/renders/Render_FINAISScene 38_1.webp" alt="Render Final - Cena 38" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 39_1.webp" data-full="public/images/renders/Render_FINAISScene 39_1.webp" alt="Render Final - Cena 39" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Render_FINAISScene 40.webp" data-full="public/images/renders/Render_FINAISScene 40.webp" alt="Render Final - Cena 40" loading="lazy" decoding="async">
-            </div>
-
-            <!-- Additional Scenes -->
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Scene 2.webp" data-full="public/images/renders/Scene 2.webp" alt="Cena 2" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Scene 3.webp" data-full="public/images/renders/Scene 3.webp" alt="Cena 3" loading="lazy" decoding="async">
-            </div>
-            <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="public/images/renders/thumbs/Scene 4.webp" data-full="public/images/renders/Scene 4.webp" alt="Cena 4" loading="lazy" decoding="async">
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox Modal -->
+    <!-- ═══════════════════════════════════════
+         LIGHTBOX MODAL
+    ════════════════════════════════════════ -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-close" title="Fechar">&times;</span>
         <img class="lightbox-content" id="lightbox-img" alt="">
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
-    <footer>
-        <p>Projeto de Paisagismo: Tanus Saab e Gustavo Valencio | Visualizações 3D: Lucas Nakamura Cerejo</p>
-        <p>&copy; 2025 Casa EVA - Todos os direitos reservados.</p>
-    </footer>
+    <!-- ═══════════════════════════════════════
+         BOTTOM NAVIGATION — MOBILE ONLY
+    ════════════════════════════════════════ -->
+    <nav id="bottom-nav" aria-label="Navegação principal">
 
-    <div class="scroll-progress"></div>
+        <!-- Início -->
+        <button class="bottom-nav-btn active" data-page="inicio" onclick="switchPage('inicio')" aria-label="Início">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V10.5z"/>
+                <polyline points="9 21 9 13 15 13 15 21"/>
+            </svg>
+            Início
+        </button>
 
+        <!-- Espécies -->
+        <button class="bottom-nav-btn" data-page="especies" onclick="switchPage('especies')" aria-label="Espécies">
+            <svg viewBox="0 0 24 24">
+                <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-8 2"/>
+                <path d="M7 14c0 0 1.5-3 5-4"/>
+            </svg>
+            Espécies
+        </button>
+
+        <!-- Plantas 2D -->
+        <button class="bottom-nav-btn" data-page="plantas" onclick="switchPage('plantas')" aria-label="Plantas Baixas 2D">
+            <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="3" y1="15" x2="21" y2="15"/>
+                <line x1="9" y1="9" x2="9" y2="21"/>
+                <line x1="15" y1="9" x2="15" y2="21"/>
+            </svg>
+            Plantas 2D
+        </button>
+
+        <!-- Renders 3D -->
+        <button class="bottom-nav-btn" data-page="renders" onclick="switchPage('renders')" aria-label="Visualizações 3D">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
+            </svg>
+            Renders 3D
+        </button>
+
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+         JAVASCRIPT
+    ════════════════════════════════════════ -->
     <script>
+        /* ── Page-section switching (mobile) ── */
+        function switchPage(pageId) {
+            // Deactivate all sections
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+
+            // Activate target
+            const target = document.getElementById('page-' + pageId);
+            if (target) {
+                target.classList.add('active');
+                // Trigger fade-ins for newly visible elements
+                target.querySelectorAll('.fade-in-element:not(.is-visible)').forEach(el => {
+                    el.classList.add('is-visible');
+                });
+            }
+
+            // Update bottom nav state
+            document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.page === pageId);
+            });
+
+            // Scroll to top of page
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        /* ── Top nav link handler ── */
+        function handleNavLink(pageId) {
+            if (window.innerWidth <= 768) {
+                switchPage(pageId);
+                return false; // prevent anchor scroll on mobile
+            }
+            // Close tablet hamburger menu
+            document.getElementById('navLinks').classList.remove('active');
+            return true; // allow normal anchor scroll on desktop / tablet
+        }
+
+        /* ── Lightbox ── */
         function openLightbox(element) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-
             const img = element.querySelector('img');
-            lightbox.style.display = 'block';
-
-            const fullResSrc = img.getAttribute('data-full') || img.src;
-            lightboxImg.src = fullResSrc;
-            lightboxImg.alt = img.alt;
-            lightboxCaption.innerHTML = img.alt;
-
+            const lb  = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src     = img.getAttribute('data-full') || img.src;
+            document.getElementById('lightbox-img').alt     = img.alt;
+            document.getElementById('lightbox-caption').textContent = img.alt;
+            lb.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
         }
 
-        // Close lightbox on Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeLightbox();
-            }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLightbox();
         });
 
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        /* ── Scroll: progress bar + navbar ── */
+        window.addEventListener('scroll', () => {
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            const pct   = total > 0 ? (window.pageYOffset / total) * 100 : 0;
+            document.getElementById('scrollProgress').style.width = pct + '%';
+            document.getElementById('navbar').classList.toggle('scrolled', window.pageYOffset > 60);
+        }, { passive: true });
 
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+        /* ── Hero parallax (desktop only) ── */
+        let rafPending = false;
+        window.addEventListener('scroll', () => {
+            if (!rafPending) {
+                requestAnimationFrame(() => {
+                    if (window.innerWidth > 768) {
+                        const hdr = document.querySelector('header');
+                        const s   = window.pageYOffset;
+                        if (hdr && s < 700) {
+                            hdr.style.transform = `translateY(${s * 0.28}px)`;
+                            hdr.style.opacity   = (1 - s / 700).toFixed(3);
+                        }
+                    }
+                    rafPending = false;
+                });
+                rafPending = true;
+            }
+        }, { passive: true });
+
+        /* ── Intersection Observer for fade-in ── */
+        const fadeObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('is-visible');
+                    fadeObs.unobserve(e.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
 
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrolled = (window.pageYOffset / windowHeight) * 100;
-            document.querySelector('.scroll-progress').style.width = scrolled + '%';
-        });
-
-        // Subtle parallax on header
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const scrolled = window.pageYOffset;
-                    const header = document.querySelector('header');
-                    if (scrolled < 600) {
-                        header.style.transform = `translateY(${scrolled * 0.3}px)`;
-                        header.style.opacity = 1 - (scrolled / 600);
-                    }
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-
-        // Initialize animations on load
         document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll(
-                '.species-card, .gallery-item, .intro-container, h2, h3'
+            const targets = document.querySelectorAll(
+                '.species-card, .gallery-item, .intro-container, .section-header, .header-content'
             );
-            animateElements.forEach(el => {
+            targets.forEach(el => {
                 el.classList.add('fade-in-element');
-                fadeInObserver.observe(el);
+                fadeObs.observe(el);
             });
-        });
 
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
-
-        // Navbar scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            // On mobile: immediately reveal active-page elements
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.page-section.active .fade-in-element').forEach(el => {
+                    el.classList.add('is-visible');
+                });
             }
-
-            lastScroll = currentScroll;
         });
+
+        /* ── Tablet hamburger ── */
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        /* ── Resize: reveal all sections on desktop ── */
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.querySelectorAll('.page-section').forEach(s => {
+                    s.querySelectorAll('.fade-in-element').forEach(el => el.classList.add('is-visible'));
+                });
+            }
+        }, { passive: true });
     </script>
+
 </body>
 </html>
